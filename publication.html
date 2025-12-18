@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- chome mobile panel color -->
+    <meta name="theme-color" content="#EDCE29">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/ui/favicon.png" type="image/x-icon">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.css">
+    <!-- fancybox css -->
+    <link rel="stylesheet" href="css/plugins/fancybox.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/fontawesome.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- page title -->
+    <title>Cleandy</title>
+
+</head>
+
+<body>
+
+    <!-- page wrapper -->
+    <div class="mil-page-wrapper">
+
+        <!-- static content -->
+        <div class="mil-preloader-frame">
+            <div class="mil-preloader-content">
+                <img src="img/ui/logo.png" alt="logo">
+                <div class="mil-preloader">
+                    <div class="mil-preload-line"></div>
+                </div>
+                <div class="mil-fs-18 mil-pre-text mil-m-1 mil-fw-600">loading: <span class="mil-percent">00</span> %</div>
+            </div>
+        </div>
+        <div class="mil-top-panel">
+            <div class="container">
+                <div class="mil-tp-content">
+                    <div class="mil-left">
+                        <a href="#top" class="mil-logo mil-hover-bri-105" style="width: 16rem">
+                            <img src="img/ui/logo.png" alt="logo">
+                            <img src="img/ui/logo-light.png" alt="logo" class="mil-light">
+                        </a>
+                    </div>
+                    <nav class="mil-main-menu">
+                        <ul id="swupMenu" class="mil-menu-transition mil-aic mil-m-4">
+                            <li class="mil-has-children">
+                                <a href="">Home</a>
+                                <ul>
+                                    <li>
+                                        <a href="home-1.html">Home type 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="home-2.html">Home type 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="home-3.html">Home type 3</a>
+                                    </li>
+                                    <li>
+                                        <a href="home-4.html">Home type 4</a>
+                                    </li>
+                                    <li>
+                                        <a href="home-5.html">Home type 5</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mil-has-children">
+                                <a href="">Services</a>
+                                <ul>
+                                    <li>
+                                        <a href="services.html">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="service-1.html">Single service type 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="service-2.html">Single service type 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="subscription.html">Subscription</a>
+                                    </li>
+                                    <li>
+                                        <a href="calculator.html">Price Calculator</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mil-has-children mil-current">
+                                <a href="">Blog</a>
+                                <ul>
+                                    <li>
+                                        <a href="blog.html">Blog list</a>
+                                    </li>
+                                    <li>
+                                        <a href="publication.html">Publication</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mil-right mil-jce">
+                        <div class="mil-tp-phone mil-aic mil-mr-60 mil-sm-mr-15">
+                            <i class="far fa-mobile mil-icon mil-sm mil-bg-a-2 mil-m-4 mil-mr-15 mil-sm-hidden" style="padding-top: .2rem"></i>
+                            <a href="tel:+380123456789" class="mil-fw-600" data-no-swup>+1 (049) 129-45X7</a>
+                        </div>
+                        <a href="contact.html" class="mil-btn mil-lg mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-icon-btn mil-hover-scale mil-md-hidden"><span>Clean now</span><i class="far fa-magic mil-bg-m-1 mil-a-1"></i></a>
+                        <div class="mil-menu-btn">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mil-right-buttons-frame">
+            <div class="mil-order-call-window">
+                <div class="mil-ocw-content">
+                    <div class="row mil-aic">
+                        <div class="col-lg-7">
+                            <form>
+                                <h4 class="mil-fs-28 mil-mb-30">Leave your number, <br>and we'll call you back</h4>
+                                <div class="mil-input-frame mil-mb-15">
+                                    <input type="text" id="user-name-2" name="user-name" placeholder="Name" class="mil-br-md mil-bg-m-3" autocomplete="name">
+                                    <i class="far fa-user mil-a-2"></i>
+                                </div>
+                                <div class="mil-input-frame mil-mb-30">
+                                    <input type="tel" id="user-phone-2" name="user-tel" class="mil-phone-input mil-br-md mil-bg-m-3" placeholder="+38 (___) ___-__-__" autocomplete="tel">
+                                    <i class="far fa-mobile mil-a-2"></i>
+                                </div>
+                                <button class="mil-btn mil-bg-a-1 mil-icon-btn mil-br-xl mil-hover-bri-105 mil-hover-scale" type="submit">Order a call<i class="far fa-arrow-right mil-bg-m-1 mil-a-1"></i></button>
+                            </form>
+                        </div>
+                        <div class="col-lg-5">
+                            <img src="img/ui/cc.jpg" alt="callcenter" class="mil-ocw-img mil-br-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mil-right-buttons">
+                <a href="#top" class="mil-side-btn mil-back-to-top mil-hover-bri-120">
+                    <i class="far fa-arrow-up mil-a-1"></i>
+                </a>
+                <button class="mil-side-btn mil-open-window mil-hover-bri-120"></button>
+            </div>
+        </div>
+        <div class="mil-discount-popup">
+            <div class="mil-popup-window">
+                <div class="mil-envelope-top">
+                    <i class="fal fa-times mil-close-popup"></i>
+                    <svg viewBox="0 0 555 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_658_621)">
+                            <path d="M15 180.242C15 169.665 20.5702 159.869 29.6603 154.461L262.16 16.1269C271.613 10.5024 283.387 10.5024 292.84 16.1269L525.34 154.461C534.43 159.869 540 169.665 540 180.242V205H15V180.242Z" fill="white" />
+                        </g>
+                        <path d="M90 153L277.931 43L465 153" stroke="#CC4E4E" stroke-opacity="0.04" stroke-width="34" stroke-linecap="round" />
+                        <defs>
+                            <filter id="filter0_d_658_621" x="0" y="0.908447" width="555" height="223.092" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="7.5" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_658_621" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_658_621" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <div class="mil-discount-card">
+                        <div class="mil-text-part mil-aic mil-bg-a-1">
+                            <div class="mil-aic">
+                                <div class="mil-dscnt-star mil-invert">
+                                    <img src="img/ui/star.svg" alt="star">
+                                    <div class="mil-fs-40 mil-lh-100 mil-m-3 mil-fw-700"><span>50</span>%</div>
+                                </div>
+                                <div>
+                                    <p class="mil-m-1 mil-mb-15 mil-opacity-7">Hurry up!</p>
+                                    <h3 class="mil-fs-32 mil-mb-20">Discount for the first cleaning <span class="mil-m-4">*</span></h3>
+                                    <p class="mil-m-1 mil-opacity-7">Limited time offer!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mil-dscnt-part">
+                            <img src="img/ui/discount.svg" alt="discount">
+                            <div class="mil-up-text mil-m-4"><img src="img/ui/logo-light.png" alt="logo" style="width: 11rem; height: auto; margin-left: -.5rem"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mil-envelope-body mil-tac mil-br-lg">
+                    <h4 class="mil-fs-36 mil-mb-60">🔥 Wow! That's so lucky! 🥳</h4>
+                    <form>
+                        <div class="row">
+                            <div class="col-6 mil-mb-15">
+                                <div class="mil-input-frame">
+                                    <input type="text" id="user-name-3" name="user-name" placeholder="Name" class="mil-br-md mil-bg-m-3" autocomplete="name">
+                                    <i class="far fa-user mil-a-2"></i>
+                                </div>
+                            </div>
+                            <div class="col-6 mil-mb-15">
+                                <div class="mil-input-frame">
+                                    <input type="email" id="user-email-3" name="user-email" placeholder="Email" class="mil-br-md mil-bg-m-3" autocomplete="email">
+                                    <i class="far fa-at mil-a-2"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mil-mb-15">
+                                <div class="mil-input-frame">
+                                    <input type="tel" id="user-phone-3" name="user-tel" class="mil-phone-input mil-br-md mil-bg-m-3" placeholder="+38 (___) ___-__-__" autocomplete="tel">
+                                    <i class="far fa-mobile mil-a-2"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mil-aic mil-mt-15">
+                                <p class="mil-fs-14 mil-m-2 mil-tal">By clicking the send button, you agree to the rules for processing personal data</p>
+                                <button class="mil-btn mil-bg-a-1 mil-icon-btn mil-br-xl mil-hover-bri-105 mil-hover-scale mil-ml-60 mil-sm-ml-30" type="submit">Get it now<i class="far fa-arrow-right mil-bg-m-1 mil-a-1"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- static content end -->
+
+        <!-- dynamic content -->
+        <div id="swupMain" class="transition-fade">
+
+            <!-- hero -->
+            <div class="mil-hero-inner mil-relative" id="top">
+                <img src="img/ui/bg.png" alt="background" class="mil-bg" style="top: 0">
+                <div class="container mil-column mil-jcb mil-h-100">
+                    <div class="row mil-jcb mil-h-100">
+                        <div class="col-lg-7 mil-mb-60">
+                            <div class="mil-main-title mil-jcc mil-ais mil-column">
+                                <div class="mil-column mil-sm-mb-0 mil-w-100">
+                                    <div class="mil-aic">
+                                        <div class="mil-word-frame">
+                                            <svg width="89" height="89" viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg" class="mil-text-star" style="top: -15%;right: -7%">
+                                                <rect x="42.1406" y="13.0017" width="3.46874" height="62.7841" fill="#F6D62D" />
+                                                <rect x="13.0078" y="45.2607" width="3.46874" height="62.7841" transform="rotate(-90 13.0078 45.2607)" fill="#F6D62D" />
+                                                <rect x="21.5859" y="22.8096" width="3.46874" height="62.7841" transform="rotate(-45 21.5859 22.8096)" fill="#F6D62D" />
+                                                <rect x="22.8125" y="67.2046" width="3.46874" height="62.7841" transform="rotate(-135 22.8125 67.2046)" fill="#F6D62D" />
+                                            </svg>
+                                            <h1 class="mil-fs-100 mil-sm-fs-72 mil-lh-110">Secrets to Effective</h1>
+                                        </div>
+                                    </div>
+                                    <div class="mil-word-frame mil-mb-60">
+                                        <h1 class="mil-fs-100 mil-sm-fs-72 mil-lh-110"><img src="img/ui/t9.jpg" alt="image" class="mil-text-image mil-long"> Cleaning</h1>
+                                    </div>
+                                    <div class="mil-aic">
+                                        <ul class="mil-category">
+                                            <li class="mil-bg-m-1 mil-up-text mil-m-3 mil-mr-5">Apartment</li>
+                                            <li class="mil-bg-a-1 mil-up-text mil-m-1 mil-mr-5">Post-construction</li>
+                                            <li class="mil-date">08, 24, 2024</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mil-column col-lg-5 mil-jcb mil-aie mil-sm-ais mil-mb-60">
+                            <ul class="mil-breadcrumbs mil-mb-60">
+                                <li><a href="home-2.html">Home</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                            <div class="mil-circle-text-position">
+                                <div class="mil-circle-text mil-rotate mil-accent-inside" data-value="360">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                                        <defs>
+                                            <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                                        </defs>
+                                        <circle cx="150" cy="100" r="75" fill="none" />
+                                        <g>
+                                            <use xlink:href="#circlePath" fill="none" />
+                                            <text class="mil-link mil-dark" style="letter-spacing: .75rem">
+                                                <textPath xlink:href="#circlePath">Scroll down - Scroll down - </textPath>
+                                            </text>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <a href="#scroll" class="far fa-arrow-down mil-bg-m-1 mil-a-1"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- hero end -->
+
+            <!-- cover -->
+            <div class="mil-p-0-f">
+                <div class="container">
+                    <div class="mil-port-cover">
+                        <img src="img/blog/4.jpg" alt="cover" class="mil-scale-img" data-value-1="1.2" data-value-2="1">
+                    </div>
+                </div>
+            </div>
+            <!-- cover end -->
+
+            <!-- blog -->
+            <div class="mil-p-0-15 mil-relative" id="scroll">
+                <div class="container">
+                    <div class="row mil-jcb">
+                        <div class="col-12 col-lg-8">
+                            <div class="mil-publication mil-up mil-mb-15">
+                                <h4 class="mil-fs-36 mil-mb-30 mil-lh-120 mil-up">Secrets to Effective Cleaning: <br>Simple Tips for a Sparkling Space</h4>
+
+                                <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">Achieving a clean, organized home doesn’t have to be overwhelming. With just a few key techniques, you can simplify your routine and enjoy a spotless space. Here are the essential secrets to effective cleaning:</p>
+
+                                <h5 class="mil-fs-24 mil-mb-30 mil-up">1. Start by Decluttering</h5>
+                                <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">Clearing surfaces of unnecessary items before you begin cleaning will make the entire process faster and more effective. Removing clutter not only gives you easier access to each area but also instantly makes your space look more organized and open.</p>
+
+                                <h5 class="mil-fs-24 mil-mb-30 mil-up">2. Use the Right Tools and Products</h5>
+                                <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">Microfiber cloths are ideal for capturing dust and dirt without scratching surfaces. Pair them with efficient cleaning products, especially for tough spots. Let products sit for a few minutes to break down grime before wiping—this “dwell time” allows you to clean with minimal scrubbing.</p>
+
+                                <h5 class="mil-fs-24 mil-mb-30 mil-up">3. Work from Top to Bottom</h5>
+                                <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">Cleaning from top to bottom ensures efficiency. Start with high surfaces, such as shelves and countertops, so that any dust or debris falls to lower areas, which you’ll clean last. This way, you avoid double work and ensure every surface shines.</p>
+
+                                <blockquote class="mil-mb-60 mil-fs-24 mil-bg-a-2 mil-m-4 mil-lh-160 mil-up"><i>"Cleaning is not just about making things look good, it’s about creating a space that feels good to be in."</i></blockquote>
+
+                                <p class="mil-fs-18 mil-lh-160 mil-mb-15 mil-up">Cleaning can be therapeutic and rewarding when approached with a clear plan. Beyond the aesthetic benefits, maintaining a clean space positively impacts mental well-being, helping reduce stress and increase focus. A tidy environment can inspire productivity, create a sense of calm, and even make spending time at home more enjoyable. Plus, regular, efficient cleaning prevents dirt and clutter from building up, making each session quicker and easier. By incorporating these strategies into your routine, you’ll be able to create a space that’s not only beautiful but also supports a healthy, balanced lifestyle. So set aside some time, follow these steps, and transform your home into a refreshing, welcoming sanctuary. Happy cleaning!</p>
+                            </div>
+                            <div class="mil-publication mil-mb-15">
+                                <h2 class="mil-fs-36 mil-mb-60 mil-up">You may also like</h2>
+                                <div class="row">
+                                    <div class="col-12 col-lg-6 mil-mb-15 mil-up">
+                                        <a href="publication-2.html" class="mil-blog-card mil-br-lg">
+                                            <div class="mil-cover">
+                                                <img src="img/blog/7.jpg" alt="cover">
+                                                <ul class="mil-category">
+                                                    <li class="mil-bg-m-1 mil-up-text mil-m-3 mil-mr-5">Office</li>
+                                                    <li class="mil-bg-a-2 mil-up-text mil-m-3 mil-mr-5">Dry Cleaning</li>
+                                                </ul>
+                                            </div>
+                                            <div class="mil-descr mil-bg-m-3">
+                                                <p class="mil-up mil-mb-20"><span class="mil-date">08, 24, 2024</span> &nbsp; by &nbsp; <span class="mil-a-2">Emma Miller</span></p>
+                                                <h5 class="mil-fs-28 mil-m-1 mil-up mil-mb-15 mil-lh-140">Keep your home and office clean effortlessly</h5>
+                                                <p class="mil-lh-180 mil-mb-30 mil-up">Whether you work from home or in a traditional office setting, keeping your space clean is key to staying productive and comfortable. Clutter and dirt can affect your mood, reduce efficiency, and even lead to stress.</p>
+                                                <div class="mil-up">
+                                                    <div class="mil-btn mil-sm mil-bg-m-2-light mil-br-xl mil-hover-bri-105 mil-hover-scale">Read more</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mil-mb-15 mil-up">
+                                        <a href="publication-2.html" class="mil-blog-card mil-br-lg">
+                                            <div class="mil-cover">
+                                                <img src="img/blog/1.jpg" alt="cover">
+                                                <ul class="mil-category">
+                                                    <li class="mil-bg-m-1 mil-up-text mil-m-3 mil-mr-5">Home</li>
+                                                    <li class="mil-bg-m-4 mil-up-text mil-m-1 mil-mr-5">Windows</li>
+                                                </ul>
+                                            </div>
+                                            <div class="mil-descr mil-bg-m-3">
+                                                <p class="mil-up mil-mb-20"><span class="mil-date">08, 24, 2024</span> &nbsp; by &nbsp; <span class="mil-a-2">Oscar Newman</span></p>
+                                                <h5 class="mil-fs-28 mil-m-1 mil-up mil-mb-15 mil-lh-140">Natural Cleaning Products: Myths and Reality</h5>
+                                                <p class="mil-lh-180 mil-mb-30 mil-up">The easiest way to prevent mess from piling up is by doing a little bit of cleaning every day. Instead of letting tasks accumulate until the weekend or when you have more time, take a few minutes each day to tidy up.</p>
+                                                <div class="mil-up">
+                                                    <div class="mil-btn mil-sm mil-bg-m-2-light mil-br-xl mil-hover-bri-105 mil-hover-scale">Read more</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="mil-sidebar mil-mb-f">
+                                <div class="mil-text-side mil-auto mil-mb-15 mil-up">
+                                    <div class="mil-box-bg">
+                                        <img src="img/ui/t5.jpg" alt="bg">
+                                    </div>
+                                    <div class="mil-text-frame mil-column mil-aic mil-w-100">
+                                        <div class="mil-aic mil-mb-20">
+                                            <p class="mil-tac">We clean objects of any <br>complexity and size in 6-9 hours</p>
+                                        </div>
+                                        <h2 class="mil-fs-52 mil-m-3 mil-lh-110 mil-mb-40 mil-tac">Want to learn more about our services?</h2>
+                                        <div class="mil-buttons-frame">
+                                            <a href="services.html" class="mil-btn mil-icon-btn mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-hover-scale">Our Services<i class="far fa-plus mil-bg-m-1 mil-a-1"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mil-sidebar-card mil-mb-15 mil-up">
+                                    <h4 class="mil-mb-40 mil-fs-24">Categories</h4>
+                                    <div class="mil-dots mil-mb-40"></div>
+                                    <ul class="mil-categories">
+                                        <li><a href="blog-2.html">Tips & Tricks</a></li>
+                                        <li><a href="blog-2.html">Home cleaning</a></li>
+                                        <li><a href="blog-2.html">Technologies</a></li>
+                                        <li><a href="blog-2.html">Detergents</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mil-sidebar-card mil-mb-15 mil-up">
+                                    <h4 class="mil-fs-24 mil-mb-40">Popular</h4>
+                                    <div class="mil-dots mil-mb-40"></div>
+                                    <a href="publication-2.html" class="mil-blog-card mil-type-2 mil-br-lg mil-mb-15">
+                                        <div class="mil-cover">
+                                            <img src="img/blog/6.jpg" alt="cover">
+                                        </div>
+                                        <div class="mil-descr">
+                                            <h5 class="mil-fs-20 mil-m-1 mil-lh-140">Keep your home and office clean effortlessly</h5>
+                                        </div>
+                                    </a>
+                                    <a href="publication-2.html" class="mil-blog-card mil-type-2 mil-br-lg mil-mb-15">
+                                        <div class="mil-cover">
+                                            <img src="img/blog/2.jpg" alt="cover">
+                                        </div>
+                                        <div class="mil-descr">
+                                            <h5 class="mil-fs-20 mil-m-1 mil-lh-140">Secrets to Effective Cleaning: What Everyone Should Know</h5>
+                                        </div>
+                                    </a>
+                                    <a href="publication-2.html" class="mil-blog-card mil-type-2 mil-br-lg mil-mb-30">
+                                        <div class="mil-cover">
+                                            <img src="img/blog/8.jpg" alt="cover">
+                                        </div>
+                                        <div class="mil-descr">
+                                            <h5 class="mil-fs-20 mil-m-1 mil-lh-140">Natural Cleaning Products: Myths and Reality</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="mil-sidebar-card mil-aic mil-mb-15 mil-jcb mil-bg-a-2 mil-up">
+                                    <h5 class="mil-fs-24 mil-md-fs-32 mil-m-4 mil-mb-30 mil-md-mb-30">Get in touch</h5>
+                                    <a href="contact.html" class="mil-link mil-m-4 mil-mb-30">Contact us<i class="far fa-arrow-right mil-bg-a-1 mil-m-1"></i></a>
+                                </div>
+                                <div class="mil-sidebar-card mil-mb-15 mil-up">
+                                    <h4 class="mil-mb-40 mil-fs-24">Subscribe our newsletter</h4>
+                                    <div class="mil-dots mil-mb-40"></div>
+                                    <form class="mil-subscribe mil-mb-30">
+                                        <input type="email" class="mil-bg-m-3 mil-light mil-br-xl" placeholder="Your email" id="subscribe-blog" name="subscribe">
+                                        <button type="submit" class="mil-bg-a-1"><i class="far fa-arrow-right"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- blog end -->
+
+            <!-- footer -->
+            <footer>
+                <div class="mil-footer-bg">
+                    <video class="mil-footer-bg mil-scale-img" data-value-1="1" data-value-2="1.3" autoplay="autoplay" loop="loop" muted playsinline oncontextmenu="return false;" preload="auto">
+                        <source src="img/ui/footer.mp4">
+                    </video>
+                </div>
+                <div class="mil-footer-content">
+                    <div class="container">
+                        <div class="row mil-p-f-60">
+                            <div class="col-lg-7 col-md-6 col-sm-12 mil-mb-60">
+                                <div class="row">
+                                    <div class="col-8 col-md-6">
+                                        <a href="#top" class="mil-logo mil-hover-bri-105 mil-mb-30 mil-up" style="width: 16rem">
+                                            <img src="img/ui/logo-light.png" alt="logo" class="mil-light">
+                                        </a>
+                                        <p class="mil-mb-30 mil-fs-18 mil-up">Subscribe our newsletter</p>
+                                        <form class="mil-subscribe mil-up">
+                                            <input type="email" class="mil-bg-m-1 mil-br-xl" placeholder="Your email" id="subscribe" name="subscribe">
+                                            <button type="submit" class="mil-bg-a-1"><i class="far fa-arrow-right"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-6 col-sm-12 mil-mb-60">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="home-2.html">Home</a></li>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="services.html">Services</a></li>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="calculator.html">Calculate price</a></li>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="blog.html">Blog</a></li>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-1.html">Apartment</a></li>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-2.html">Home</a></li>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-1.html">Office</a></li>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-2.html">Windows</a></li>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-1.html">Pool</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mil-dots mil-up"></div>
+                        <div class="row mil-p-f-60 mil-sm-column-r">
+                            <div class="col-lg-7 col-md-6 col-sm-12 mil-column mil-jcb mil-mb-60">
+                                <ul class="mil-aic mil-mb-30 mil-up">
+                                    <li class="mil-mr-20 mil-fs-20 mil-m-3">
+                                        <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                                            <i class="far fa-circle"></i>
+                                        </a>
+                                    </li>
+                                    <li class="mil-mr-20 mil-fs-20 mil-m-3">
+                                        <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                                            <i class="far fa-circle"></i>
+                                        </a>
+                                    </li>
+                                    <li class="mil-mr-20 mil-fs-20 mil-m-3">
+                                        <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                                            <i class="far fa-circle"></i>
+                                        </a>
+                                    </li>
+                                    <li class="mil-fs-20 mil-m-3">
+                                        <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                                            <i class="far fa-circle"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="mil-aic mil-up">
+                                    <li class="mil-hover-m-4 mil-mr-20">
+                                        <a href="contact.html">Privacy Policy</a>
+                                    </li>
+                                    <li class="mil-hover-m-4 mil-mr-20">
+                                        <a href="contact.html">Terms and conditions</a>
+                                    </li>
+                                    <li class="mil-hover-m-4 mil-mr-20">
+                                        <a href="contact.html">Cookie Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-5 col-md-6 col-sm-12 mil-mb-60">
+                                <div class="row mil-jcb">
+                                    <div class="col-6 mil-up">
+                                        <h5 class="mil-fs-22 mil-fw-600 mil-m-3 mil-mb-20">Springfield</h5>
+                                        <p class="mil-mb-20">71 South Los Carneros Road, <br>Goleta, California 93117</p>
+                                        <p class="mil-up-text mil-a-1">+1-877-926-5184</p>
+                                    </div>
+                                    <div class="col-6 mil-up">
+                                        <h5 class="mil-fs-22 mil-fw-600 mil-m-3 mil-mb-20">Greenville</h5>
+                                        <p class="mil-mb-20">71 South Los Carneros Road, <br>Goleta, California 93117</p>
+                                        <p class="mil-up-text mil-a-1">+31 174 705 811</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mil-dots mil-up"></div>
+                        <div class="mil-footer-bottom mil-aic mil-jcb mil-up">
+                            <p>© Copyright 2023 - Mil. All Rights Reserved.</p>
+                            <p>Author: <a href="https://themeforest.net/user/millerdigitaldesign/portfolio" target="_blank" data-no-swup class="mil-text-link mil-a-1">Nazar Miller</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer end -->
+
+        </div>
+        <!-- dynamic content end -->
+
+    </div>
+    <!-- page wrapper end -->
+
+    <!-- swup js -->
+    <script src=" js/plugins/swup.min.js"></script>
+    <!-- swup body class plugin -->
+    <script src="js/plugins/SwupBodyClassPlugin.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/scroll-trigger.js"></script>
+    <!-- lenis js -->
+    <script src="js/plugins/lenis.js"></script>
+    <!-- cleave js -->
+    <script src="js/plugins/cleave.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- fancybox js -->
+    <script src="js/plugins/fancybox.js"></script>
+    <!-- calculator js -->
+    <script src="js/plugins/calculator.js"></script>
+    <!-- main js -->
+    <script src="js/main.js"></script>
+
+
+</body>

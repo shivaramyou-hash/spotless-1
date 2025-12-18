@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- chome mobile panel color -->
+    <meta name="theme-color" content="#EDCE29">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/ui/favicon.png" type="image/x-icon">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.css">
+    <!-- fancybox css -->
+    <link rel="stylesheet" href="css/plugins/fancybox.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/fontawesome.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- page title -->
+    <title>Cleandy</title>
+
+</head>
+
+<body>
+
+    <!-- page wrapper -->
+    <div class="mil-page-wrapper">
+
+        <!-- static content -->
+        <div class="mil-preloader-frame">
+            <div class="mil-preloader-content">
+                <img src="img/ui/logo.png" alt="logo">
+                <div class="mil-preloader">
+                    <div class="mil-preload-line"></div>
+                </div>
+                <div class="mil-fs-18 mil-pre-text mil-m-1 mil-fw-600">loading: <span class="mil-percent">00</span> %</div>
+            </div>
+        </div>
+        <div class="mil-top-panel">
+            <div class="container">
+                <div class="mil-tp-content">
+                    <div class="mil-left">
+                        <a href="#top" class="mil-logo mil-hover-bri-105" style="width: 16rem">
+                            <img src="img/ui/logo.png" alt="logo">
+                            <img src="img/ui/logo-light.png" alt="logo" class="mil-light">
+                        </a>
+                    </div>
+                    <nav class="mil-main-menu">
+                        <ul id="swupMenu" class="mil-menu-transition mil-aic mil-m-4">
+                            <li class="mil-has-children">
+                                <a href="">Home</a>
+                                <ul>
+                                    <li>
+                                        <a href="home-1.html">Home type 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="home-2.html">Home type 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="home-3.html">Home type 3</a>
+                                    </li>
+                                    <li>
+                                        <a href="home-4.html">Home type 4</a>
+                                    </li>
+                                    <li>
+                                        <a href="home-5.html">Home type 5</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mil-has-children mil-current">
+                                <a href="">Services</a>
+                                <ul>
+                                    <li>
+                                        <a href="services.html">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="service-1.html">Single service type 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="service-2.html">Single service type 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="subscription.html">Subscription</a>
+                                    </li>
+                                    <li>
+                                        <a href="calculator.html">Price Calculator</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mil-has-children">
+                                <a href="">Blog</a>
+                                <ul>
+                                    <li>
+                                        <a href="blog.html">Blog list</a>
+                                    </li>
+                                    <li>
+                                        <a href="publication.html">Publication</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mil-right mil-jce">
+                        <div class="mil-tp-phone mil-aic mil-mr-60 mil-sm-mr-15">
+                            <i class="far fa-mobile mil-icon mil-sm mil-bg-a-2 mil-m-4 mil-mr-15 mil-sm-hidden" style="padding-top: .2rem"></i>
+                            <a href="tel:+380123456789" class="mil-fw-600" data-no-swup>+1 (049) 129-45X7</a>
+                        </div>
+                        <a href="contact.html" class="mil-btn mil-lg mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-icon-btn mil-hover-scale mil-md-hidden"><span>Clean now</span><i class="far fa-magic mil-bg-m-1 mil-a-1"></i></a>
+                        <div class="mil-menu-btn">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mil-right-buttons-frame">
+            <div class="mil-order-call-window">
+                <div class="mil-ocw-content">
+                    <div class="row mil-aic">
+                        <div class="col-lg-7">
+                            <form>
+                                <h4 class="mil-fs-28 mil-mb-30">Leave your number, <br>and we'll call you back</h4>
+                                <div class="mil-input-frame mil-mb-15">
+                                    <input type="text" id="user-name-2" name="user-name" placeholder="Name" class="mil-br-md mil-bg-m-3" autocomplete="name">
+                                    <i class="far fa-user mil-a-2"></i>
+                                </div>
+                                <div class="mil-input-frame mil-mb-30">
+                                    <input type="tel" id="user-phone-2" name="user-tel" class="mil-phone-input mil-br-md mil-bg-m-3" placeholder="+38 (___) ___-__-__" autocomplete="tel">
+                                    <i class="far fa-mobile mil-a-2"></i>
+                                </div>
+                                <button class="mil-btn mil-bg-a-1 mil-icon-btn mil-br-xl mil-hover-bri-105 mil-hover-scale" type="submit">Order a call<i class="far fa-arrow-right mil-bg-m-1 mil-a-1"></i></button>
+                            </form>
+                        </div>
+                        <div class="col-lg-5">
+                            <img src="img/ui/cc.jpg" alt="callcenter" class="mil-ocw-img mil-br-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mil-right-buttons">
+                <a href="#top" class="mil-side-btn mil-back-to-top mil-hover-bri-120">
+                    <i class="far fa-arrow-up mil-a-1"></i>
+                </a>
+                <button class="mil-side-btn mil-open-window mil-hover-bri-120"></button>
+            </div>
+        </div>
+        <div class="mil-discount-popup">
+            <div class="mil-popup-window">
+                <div class="mil-envelope-top">
+                    <i class="fal fa-times mil-close-popup"></i>
+                    <svg viewBox="0 0 555 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_658_621)">
+                            <path d="M15 180.242C15 169.665 20.5702 159.869 29.6603 154.461L262.16 16.1269C271.613 10.5024 283.387 10.5024 292.84 16.1269L525.34 154.461C534.43 159.869 540 169.665 540 180.242V205H15V180.242Z" fill="white" />
+                        </g>
+                        <path d="M90 153L277.931 43L465 153" stroke="#CC4E4E" stroke-opacity="0.04" stroke-width="34" stroke-linecap="round" />
+                        <defs>
+                            <filter id="filter0_d_658_621" x="0" y="0.908447" width="555" height="223.092" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="7.5" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_658_621" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_658_621" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <div class="mil-discount-card">
+                        <div class="mil-text-part mil-aic mil-bg-a-1">
+                            <div class="mil-aic">
+                                <div class="mil-dscnt-star mil-invert">
+                                    <img src="img/ui/star.svg" alt="star">
+                                    <div class="mil-fs-40 mil-lh-100 mil-m-3 mil-fw-700"><span>50</span>%</div>
+                                </div>
+                                <div>
+                                    <p class="mil-m-1 mil-mb-15 mil-opacity-7">Hurry up!</p>
+                                    <h3 class="mil-fs-32 mil-mb-20">Discount for the first cleaning <span class="mil-m-4">*</span></h3>
+                                    <p class="mil-m-1 mil-opacity-7">Limited time offer!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mil-dscnt-part">
+                            <img src="img/ui/discount.svg" alt="discount">
+                            <div class="mil-up-text mil-m-4"><img src="img/ui/logo-light.png" alt="logo" style="width: 11rem; height: auto; margin-left: -.5rem"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mil-envelope-body mil-tac mil-br-lg">
+                    <h4 class="mil-fs-36 mil-mb-60">🔥 Wow! That's so lucky! 🥳</h4>
+                    <form>
+                        <div class="row">
+                            <div class="col-6 mil-mb-15">
+                                <div class="mil-input-frame">
+                                    <input type="text" id="user-name-3" name="user-name" placeholder="Name" class="mil-br-md mil-bg-m-3" autocomplete="name">
+                                    <i class="far fa-user mil-a-2"></i>
+                                </div>
+                            </div>
+                            <div class="col-6 mil-mb-15">
+                                <div class="mil-input-frame">
+                                    <input type="email" id="user-email-3" name="user-email" placeholder="Email" class="mil-br-md mil-bg-m-3" autocomplete="email">
+                                    <i class="far fa-at mil-a-2"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mil-mb-15">
+                                <div class="mil-input-frame">
+                                    <input type="tel" id="user-phone-3" name="user-tel" class="mil-phone-input mil-br-md mil-bg-m-3" placeholder="+38 (___) ___-__-__" autocomplete="tel">
+                                    <i class="far fa-mobile mil-a-2"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mil-aic mil-mt-15">
+                                <p class="mil-fs-14 mil-m-2 mil-tal">By clicking the send button, you agree to the rules for processing personal data</p>
+                                <button class="mil-btn mil-bg-a-1 mil-icon-btn mil-br-xl mil-hover-bri-105 mil-hover-scale mil-ml-60 mil-sm-ml-30" type="submit">Get it now<i class="far fa-arrow-right mil-bg-m-1 mil-a-1"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- static content end -->
+
+
+        <!-- dynamic content -->
+        <div id="swupMain" class="transition-fade">
+
+            <!-- hero -->
+            <div class="mil-hero-inner mil-relative" id="top">
+                <img src="img/ui/bg.png" alt="background" class="mil-bg" style="top: 0">
+                <div class="container mil-column mil-jcb mil-h-100">
+                    <div class="row mil-jcb mil-h-100">
+                        <div class="col-lg-7 mil-mb-60">
+                            <div class="mil-main-title mil-jcc mil-ais mil-column">
+                                <div class="mil-column mil-sm-mb-0 mil-w-100">
+                                    <div class="mil-aic">
+                                        <div class="mil-word-frame">
+                                            <svg width="89" height="89" viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg" class="mil-text-star" style="top: -15%;right: -15%">
+                                                <rect x="42.1406" y="13.0017" width="3.46874" height="62.7841" fill="#F6D62D" />
+                                                <rect x="13.0078" y="45.2607" width="3.46874" height="62.7841" transform="rotate(-90 13.0078 45.2607)" fill="#F6D62D" />
+                                                <rect x="21.5859" y="22.8096" width="3.46874" height="62.7841" transform="rotate(-45 21.5859 22.8096)" fill="#F6D62D" />
+                                                <rect x="22.8125" y="67.2046" width="3.46874" height="62.7841" transform="rotate(-135 22.8125 67.2046)" fill="#F6D62D" />
+                                            </svg>
+                                            <h1 class="mil-fs-100 mil-sm-fs-72 mil-lh-110">Cleaning</h1>
+                                        </div>
+                                    </div>
+                                    <div class="mil-word-frame mil-mb-40">
+                                        <h1 class="mil-fs-100 mil-sm-fs-72 mil-lh-110"><img src="img/ui/t8.jpg" alt="image" class="mil-text-image mil-long"> Subscription</h1>
+                                    </div>
+                                    <div class="mil-aic">
+                                        <a href="contact.html" class="mil-btn mil-icon-btn mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-hover-scale mil-mr-40">Order now<i class="far fa-plus mil-bg-m-4 mil-m-1"></i></a>
+                                        <a href="calculator.html" class="mil-link mil-m-1 mil-reverse">Price Calculator<i class="far fa-calculator mil-bg-a-2 mil-m-4" style="padding: .2rem 0 0 .2rem"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mil-column col-lg-5 mil-jcb mil-aie mil-sm-ais mil-mb-60">
+                            <ul class="mil-breadcrumbs mil-mb-60">
+                                <li><a href="home-1.html">Home</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="subscription.html">Subscription</a></li>
+                            </ul>
+                            <div class="mil-circle-text-position">
+                                <div class="mil-circle-text mil-rotate mil-accent-inside" data-value="360">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                                        <defs>
+                                            <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                                        </defs>
+                                        <circle cx="150" cy="100" r="75" fill="none" />
+                                        <g>
+                                            <use xlink:href="#circlePath" fill="none" />
+                                            <text class="mil-link mil-dark" style="letter-spacing: .75rem">
+                                                <textPath xlink:href="#circlePath">Scroll down - Scroll down - </textPath>
+                                            </text>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <a href="#scroll" class="far fa-arrow-down mil-bg-m-1 mil-a-1"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- hero end -->
+
+            <!-- subscription -->
+            <div class="mil-p-0-15" id="scroll">
+                <div class="container">
+                    <div class="mil-section-title mil-mb-f mil-up">
+                        <h2 class="mil-fs-36">Monthly subscription</h2>
+                        <div class="mil-dots"></div>
+                        <b class="mil-fs-24">01</b>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mil-mb-15 mil-up">
+                            <a href="contact.html" class="mil-subscription-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-card-head mil-bg-m-1">
+                                    <h4 class="mil-fs-24 mil-m-4">Basic Care</h4>
+                                </div>
+                                <div class="mil-card-body">
+                                    <div class="mil-m-1 mil-fs-20 mil-fw-600 mil-mb-15">from $ <span class="mil-fs-52">199</span> <span class="mil-fw-400 mil-fs-16">/month</span></div>
+                                    <p class="mil-mb-30">4 times a month, 1 time a week</p>
+
+                                    <div class="mil-dots mil-mb-30"></div>
+                                    <div class="col-sm-12">
+                                        <ul class="mil-check-list mil-mb-40">
+                                            <li>Dust all surfaces</li>
+                                            <li>Mop floors</li>
+                                            <li>Clean kitchen surfaces</li>
+                                            <li>Disinfect bathroom and toilet</li>
+                                            <li>Take out trash</li>
+                                        </ul>
+                                        <div class="mil-dots mil-mb-30"></div>
+                                        <div>
+                                            <div class="mil-btn mil-bg-m-3 mil-br-xl mil-hover-bg-a-1 mil-hover-scale">Choose a plan</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mil-mb-15 mil-up">
+                            <a href="contact.html" class="mil-subscription-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-card-head mil-bg-a-2">
+                                    <h4 class="mil-fs-24 mil-m-4">Essential Clean</h4>
+                                </div>
+                                <div class="mil-card-body">
+                                    <div class="mil-m-1 mil-fs-20 mil-fw-600 mil-mb-15">from $ <span class="mil-fs-52">399</span> <span class="mil-fw-400 mil-fs-16">/month</span></div>
+                                    <p class="mil-mb-30">8 times a month, 2 time a week</p>
+
+                                    <div class="mil-dots mil-mb-30"></div>
+                                    <div class="col-sm-12">
+                                        <ul class="mil-check-list mil-mb-40">
+                                            <li>Dust all surfaces</li>
+                                            <li>Mop floors</li>
+                                            <li>Clean kitchen surfaces</li>
+                                            <li>Disinfect bathroom and toilet</li>
+                                            <li>Take out trash</li>
+                                        </ul>
+                                        <div class="mil-dots mil-mb-30"></div>
+                                        <div>
+                                            <div class="mil-btn mil-bg-m-3 mil-br-xl mil-hover-bg-a-1 mil-hover-scale">Choose a plan</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mil-mb-15 mil-up">
+                            <a href="contact.html" class="mil-subscription-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-card-head mil-bg-a-1">
+                                    <h4 class="mil-fs-24 mil-m-1">Premium Shine</h4>
+                                </div>
+                                <div class="mil-card-body">
+                                    <div class="mil-m-1 mil-fs-20 mil-fw-600 mil-mb-15">from $ <span class="mil-fs-52">599</span> <span class="mil-fw-400 mil-fs-16">/month</span></div>
+                                    <p class="mil-mb-30">12 times a month, 3 time a week</p>
+
+                                    <div class="mil-dots mil-mb-30"></div>
+                                    <div class="col-sm-12">
+                                        <ul class="mil-check-list mil-mb-40">
+                                            <li>Dust all surfaces</li>
+                                            <li>Mop floors</li>
+                                            <li>Clean kitchen surfaces</li>
+                                            <li>Disinfect bathroom and toilet</li>
+                                            <li>Take out trash</li>
+                                        </ul>
+                                        <div class="mil-dots mil-mb-30"></div>
+                                        <div>
+                                            <div class="mil-btn mil-bg-m-3 mil-br-xl mil-hover-bg-a-1 mil-hover-scale">Choose a plan</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- subscription end -->
+
+            <!-- subscription -->
+            <div class="mil-p-0-15">
+                <div class="container">
+                    <div class="mil-section-title mil-mb-f mil-up">
+                        <h2 class="mil-fs-36">Annual subscription</h2>
+                        <div class="mil-dots"></div>
+                        <b class="mil-fs-24">02</b>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mil-mb-15 mil-up">
+                            <a href="contact.html" class="mil-subscription-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-card-head mil-bg-m-1">
+                                    <h4 class="mil-fs-24 mil-m-4">Basic Care</h4>
+                                </div>
+                                <div class="mil-card-body">
+                                    <div class="mil-m-1 mil-fs-20 mil-fw-600 mil-mb-15">from $ <span class="mil-fs-52">1999</span> <span class="mil-fw-400 mil-fs-16">/year</span></div>
+                                    <p class="mil-mb-30">4 times a month, 1 time a week, 48 in total</p>
+
+                                    <div class="mil-dots mil-mb-30"></div>
+                                    <div class="col-sm-12">
+                                        <ul class="mil-check-list mil-mb-40">
+                                            <li>Dust all surfaces</li>
+                                            <li>Mop floors</li>
+                                            <li>Clean kitchen surfaces</li>
+                                            <li>Disinfect bathroom and toilet</li>
+                                            <li>Take out trash</li>
+                                        </ul>
+                                        <div class="mil-dots mil-mb-30"></div>
+                                        <div>
+                                            <div class="mil-btn mil-bg-m-3 mil-br-xl mil-hover-bg-a-1 mil-hover-scale">Choose a plan</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mil-mb-15 mil-up">
+                            <a href="contact.html" class="mil-subscription-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-card-head mil-bg-a-2">
+                                    <h4 class="mil-fs-24 mil-m-4">Essential Clean</h4>
+                                </div>
+                                <div class="mil-card-body">
+                                    <div class="mil-m-1 mil-fs-20 mil-fw-600 mil-mb-15">from $ <span class="mil-fs-52">3999</span> <span class="mil-fw-400 mil-fs-16">/year</span></div>
+                                    <p class="mil-mb-30">8 times a month, 2 time a week, 96 in total</p>
+
+                                    <div class="mil-dots mil-mb-30"></div>
+                                    <div class="col-sm-12">
+                                        <ul class="mil-check-list mil-mb-40">
+                                            <li>Dust all surfaces</li>
+                                            <li>Mop floors</li>
+                                            <li>Clean kitchen surfaces</li>
+                                            <li>Disinfect bathroom and toilet</li>
+                                            <li>Take out trash</li>
+                                        </ul>
+                                        <div class="mil-dots mil-mb-30"></div>
+                                        <div>
+                                            <div class="mil-btn mil-bg-m-3 mil-br-xl mil-hover-bg-a-1 mil-hover-scale">Choose a plan</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mil-mb-15 mil-up">
+                            <a href="contact.html" class="mil-subscription-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-card-head mil-bg-a-1">
+                                    <h4 class="mil-fs-24 mil-m-1">Premium Shine</h4>
+                                </div>
+                                <div class="mil-card-body">
+                                    <div class="mil-m-1 mil-fs-20 mil-fw-600 mil-mb-15">from $ <span class="mil-fs-52">5999</span> <span class="mil-fw-400 mil-fs-16">/year</span></div>
+                                    <p class="mil-mb-30">12 times a month, 3 time a week, 144 in total</p>
+
+                                    <div class="mil-dots mil-mb-30"></div>
+                                    <div class="col-sm-12">
+                                        <ul class="mil-check-list mil-mb-40">
+                                            <li>Dust all surfaces</li>
+                                            <li>Mop floors</li>
+                                            <li>Clean kitchen surfaces</li>
+                                            <li>Disinfect bathroom and toilet</li>
+                                            <li>Take out trash</li>
+                                        </ul>
+                                        <div class="mil-dots mil-mb-30"></div>
+                                        <div>
+                                            <div class="mil-btn mil-bg-m-3 mil-br-xl mil-hover-bg-a-1 mil-hover-scale">Choose a plan</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- subscription end -->
+
+            <!-- services -->
+            <div class="mil-p-0-15">
+                <div class="container">
+                    <div class="mil-section-title mil-mb-f mil-up">
+                        <h2 class="mil-fs-36">Additional services</h2>
+                        <div class="mil-dots"></div>
+                        <b class="mil-fs-24">03</b>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-xl-3 mil-mb-15 mil-up">
+                            <a href="service-1.html" class="mil-service-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-jcs mil-aic">
+                                    <img src="img/ui/icons/1.png" alt="icon" class="mil-card-icon mil-mr-30">
+                                    <h3 class="mil-fs-24 mil-lh-110">Window cleaning</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-xl-3 mil-mb-15 mil-up">
+                            <a href="service-1.html" class="mil-service-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-jcs mil-aic">
+                                    <img src="img/ui/icons/2.png" alt="icon" class="mil-card-icon mil-mr-30">
+                                    <h3 class="mil-fs-24 mil-lh-110">Dry cleaning</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-xl-3 mil-mb-15 mil-up">
+                            <a href="service-1.html" class="mil-service-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-jcs mil-aic">
+                                    <img src="img/ui/icons/3.png" alt="icon" class="mil-card-icon mil-mr-30">
+                                    <h3 class="mil-fs-24 mil-lh-110">Post-construction</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-xl-3 mil-mb-15 mil-up">
+                            <a href="service-1.html" class="mil-service-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-jcs mil-aic">
+                                    <img src="img/ui/icons/4.png" alt="icon" class="mil-card-icon mil-mr-30">
+                                    <h3 class="mil-fs-24 mil-lh-110">Pools cleaning</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-xl-3 mil-mb-15 mil-up">
+                            <a href="service-1.html" class="mil-service-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-jcs mil-aic">
+                                    <img src="img/ui/icons/5.png" alt="icon" class="mil-card-icon mil-mr-30">
+                                    <h3 class="mil-fs-24 mil-lh-110">landscaping</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-xl-3 mil-mb-15 mil-up">
+                            <a href="service-1.html" class="mil-service-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-jcs mil-aic">
+                                    <img src="img/ui/icons/6.png" alt="icon" class="mil-card-icon mil-mr-30">
+                                    <h3 class="mil-fs-24 mil-lh-110">Cosmetic repairs</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-xl-3 mil-mb-15 mil-up">
+                            <a href="service-1.html" class="mil-service-card mil-bg-m-4 mil-br-md">
+                                <div class="mil-jcs mil-aic">
+                                    <img src="img/ui/icons/7.png" alt="icon" class="mil-card-icon mil-mr-30">
+                                    <h3 class="mil-fs-24 mil-lh-110">By agreement</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- services end -->
+
+            <div class="container">
+                <div class="mil-dots"></div>
+            </div>
+
+            <!-- call to action -->
+            <div class="mil-p-f-0 mil-relative">
+                <img src="img/ui/bg.png" alt="background" class="mil-bg" style="top: -10rem">
+                <div class="container">
+                    <div class="mil-hero-cards-frame">
+                        <div class="row">
+                            <div class="col-lg-7 col-xxl-4 mil-mb-15 mil-up">
+                                <div class="mil-hero-users-card mil-bg-a-2 mil-br-md">
+                                    <div class="mil-aic mil-mb-30">
+                                        <ul class="mil-users-inline">
+                                            <li><img src="img/users/1.jpg" alt="User"></li>
+                                            <li><img src="img/users/2.jpg" alt="User"></li>
+                                            <li><img src="img/users/3.jpg" alt="User"></li>
+                                            <li><img src="img/users/4.jpg" alt="User"></li>
+                                        </ul>
+                                        <span class="mil-fs-32 mil-fw-700 mil-m-4 mil-ml-30">117+</span>
+                                    </div>
+                                    <p class="mil-fs-18 mil-m-4 mil-mr-15 mil-sm-mr-0" style="opacity: .7">More than 117+ customers have already appreciated all our advantages. Try it for yourself!</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-xxl-3 mil-mb-15 mil-up">
+                                <div class="mil-hero-reviews-card mil-bg-m-4 mil-br-md">
+                                    <h3 class="mil-fs-32 mil-mb-30 mil-m-1">Do you have any questions?</h3>
+                                    <a href="#faq" class="mil-link mil-m-1">Yes, I do <i class="far fa-arrow-right mil-bg-a-1 mil-m-1" style="padding: .2rem 0 0 .2rem"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-xxl-5 mil-mb-15 mil-up">
+                                <div class="mil-discount-card mil-hover-move mil-call-popup">
+                                    <div class="mil-text-part mil-aic mil-bg-a-1">
+                                        <div class="mil-aic">
+                                            <div class="mil-dscnt-star mil-invert">
+                                                <img src="img/ui/star.svg" alt="star">
+                                                <div class="mil-fs-40 mil-lh-100 mil-m-3 mil-fw-700"><span class="mil-counter" data-number="50">50</span>%</div>
+                                            </div>
+                                            <div>
+                                                <p class="mil-m-1 mil-mb-15 mil-opacity-7">Hurry up!</p>
+                                                <h3 class="mil-fs-32 mil-mb-20">Discount for the first cleaning <span class="mil-m-4">*</span></h3>
+                                                <p class="mil-m-1 mil-opacity-7">Limited time offer!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mil-dscnt-part">
+                                        <img src="img/ui/discount.svg" alt="discount">
+                                        <div class="mil-up-text mil-m-4">Get it now</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7 mil-mb-15">
+                            <div class="mil-cta mil-br-lg mil-bg-a-1 mil-aicb mil-up">
+                                <div class="row mil-jcb">
+                                    <div class="col-lg-6 mil-mb-30">
+                                        <h5 class="mil-fs-32 mil-m-1">Highly skilled professionals are always at your service.</h5>
+                                    </div>
+                                    <div class="col-lg-6 mil-jce mil-md-jcs mil-mb-30">
+                                        <a href="calculator.html" class="mil-btn mil-icon-btn mil-bg-m-1 mil-m-4 mil-br-xl mil-hover-bri-105 mil-hover-scale">Price calculator<i class="far fa-arrow-right mil-bg-a-1 mil-m-1"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mil-mb-15">
+                            <div class="mil-cta mil-br-lg mil-bg-m-4 mil-jcc mil-column mil-up">
+                                <h5 class="mil-fs-22 mil-md-fs-32 mil-m-1 mil-mb-15 mil-md-mb-30">We accept your requests 24 hours a day, 7 days a week</h5>
+                                <a href="contact.html" class="mil-link mil-m-1 mil-mb-15">Get in touch<i class="far fa-arrow-right mil-bg-m-3 mil-m-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- call to action end -->
+
+            <!-- faq -->
+            <div class="mil-p-f-30" id="faq">
+                <div class="container">
+                    <div class="mil-section-title mil-mb-f mil-up">
+                        <h2 class="mil-fs-36">FAQ</h2>
+                        <div class="mil-dots"></div>
+                        <b class="mil-fs-24">04</b>
+                    </div>
+                    <div class="row mil-mb-60">
+                        <div class="col-lg-6">
+                            <div class="mil-mb-15 mil-up">
+                                <button class="mil-accordion mil-fw-600 mil-fs-20">What cleaning services do you offer?<span class="mil-icon mil-sm mil-bg-m-3">+</span></button>
+                                <div class="mil-panel">
+                                    <p class="mil-lh-160 mil-fs-18">We offer a wide range of services, including residential cleaning, office cleaning, deep cleaning, move-in/move-out cleaning, and specialized cleaning such as carpet and upholstery cleaning.</p>
+                                </div>
+                            </div>
+                            <div class="mil-mb-15 mil-up">
+                                <button class="mil-accordion mil-fw-600 mil-fs-20">Do you use eco-friendly cleaning products?<span class="mil-icon mil-sm mil-bg-m-3">+</span></button>
+                                <div class="mil-panel">
+                                    <p class="mil-lh-160 mil-fs-18">Yes, we prioritize the health and safety of our clients and the environment. We offer eco-friendly cleaning solutions that are safe for children, pets, and people with allergies.</p>
+                                </div>
+                            </div>
+                            <div class="mil-mb-15 mil-up">
+                                <button class="mil-accordion mil-fw-600 mil-fs-20">How do I schedule a cleaning service?<span class="mil-icon mil-sm mil-bg-m-3">+</span></button>
+                                <div class="mil-panel">
+                                    <p class="mil-lh-160 mil-fs-18">You can easily schedule a cleaning service through our website or by giving us a call. Just choose your preferred date and time, and we'll handle the rest!</p>
+                                </div>
+                            </div>
+                            <div class="mil-mb-15 mil-up">
+                                <button class="mil-accordion mil-fw-600 mil-fs-20">Do I need to be home during the cleaning?<span class="mil-icon mil-sm mil-bg-m-3">+</span></button>
+                                <div class="mil-panel">
+                                    <p class="mil-lh-160 mil-fs-18">It’s entirely up to you! Some of our clients prefer to be home, while others provide us with access instructions. Rest assured, our cleaners are trustworthy and professional.</p>
+                                </div>
+                            </div>
+                            <div class="mil-mb-15 mil-up">
+                                <button class="mil-accordion mil-fw-600 mil-fs-20">What should I do before the cleaners arrive?<span class="mil-icon mil-sm mil-bg-m-3">+</span></button>
+                                <div class="mil-panel">
+                                    <p class="mil-lh-160 mil-fs-18">We recommend tidying up personal items and valuables before the cleaners arrive. This helps us focus on the cleaning tasks more efficiently.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mil-mb-15 mil-up">
+                                <button class="mil-accordion mil-fw-600 mil-fs-20">Are your cleaners insured and background-checked?<span class="mil-icon mil-sm mil-bg-m-3">+</span></button>
+                                <div class="mil-panel">
+                                    <p class="mil-lh-160 mil-fs-18">Yes, all of our cleaners are fully insured and undergo thorough background checks to ensure your peace of mind.</p>
+                                </div>
+                            </div>
+                            <div class="mil-mb-15 mil-up">
+                                <button class="mil-accordion mil-fw-600 mil-fs-20">What happens if I’m not satisfied with the cleaning?<span class="mil-icon mil-sm mil-bg-m-3">+</span></button>
+                                <div class="mil-panel">
+                                    <p class="mil-lh-160 mil-fs-18">Customer satisfaction is our top priority. If you're not completely happy with the service, please contact us within 24 hours, and we'll arrange a re-cleaning free of charge.</p>
+                                </div>
+                            </div>
+                            <div class="mil-mb-15 mil-up">
+                                <button class="mil-accordion mil-fw-600 mil-fs-20">Can I customize the cleaning service to fit my needs?<span class="mil-icon mil-sm mil-bg-m-3">+</span></button>
+                                <div class="mil-panel">
+                                    <p class="mil-lh-160 mil-fs-18">Absolutely! We offer flexible cleaning plans that can be tailored to meet your specific needs. Whether it’s a particular area that needs extra attention or special instructions, we’ve got you covered.</p>
+                                </div>
+                            </div>
+                            <div class="mil-mb-15 mil-up">
+                                <button class="mil-accordion mil-fw-600 mil-fs-20">Do you offer discounts for regular cleaning services?<span class="mil-icon mil-sm mil-bg-m-3">+</span></button>
+                                <div class="mil-panel">
+                                    <p class="mil-lh-160 mil-fs-18">Yes, we offer special pricing for recurring cleaning services. Whether you need weekly, bi-weekly, or monthly cleaning, we have <a href="" class="mil-text-link mil-a-1">Packages</a> that provide great value.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mil-mb-30 mil-up">
+                            <p class="mil-lh-160 mil-fs-18">Didn't find the answer to your question? Visit our Contact page and let us help! We're here to provide the information you need. Reach out to us anytime – we'd love to assist you!</p>
+                        </div>
+                        <div class="col-lg-6 mil-jce mil-sm-jcs mil-mb-30 mil-up">
+                            <a href="contact.html" class="mil-btn mil-bg-m-2-light mil-br-xl mil-hover-bg-a-1 mil-hover-scale mil-icon-btn">Contact us<i class="far fa-envelope mil-bg-m-4 mil-m-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- faq end -->
+
+            <!-- footer -->
+            <footer>
+                <div class="mil-footer-bg">
+                    <video class="mil-footer-bg mil-scale-img" data-value-1="1" data-value-2="1.3" autoplay="autoplay" loop="loop" muted playsinline oncontextmenu="return false;" preload="auto">
+                        <source src="img/ui/footer.mp4">
+                    </video>
+                </div>
+                <div class="mil-footer-content">
+                    <div class="container">
+                        <div class="row mil-p-f-60">
+                            <div class="col-lg-7 col-md-6 col-sm-12 mil-mb-60">
+                                <div class="row">
+                                    <div class="col-8 col-md-6">
+                                        <a href="#top" class="mil-logo mil-hover-bri-105 mil-mb-30 mil-up" style="width: 16rem">
+                                            <img src="img/ui/logo-light.png" alt="logo" class="mil-light">
+                                        </a>
+                                        <p class="mil-mb-30 mil-fs-18 mil-up">Subscribe our newsletter</p>
+                                        <form class="mil-subscribe mil-up">
+                                            <input type="email" class="mil-bg-m-1 mil-br-xl" placeholder="Your email" id="subscribe" name="subscribe">
+                                            <button type="submit" class="mil-bg-a-1"><i class="far fa-arrow-right"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-6 col-sm-12 mil-mb-60">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="home-2.html">Home</a></li>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="services.html">Services</a></li>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="calculator.html">Calculate price</a></li>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="blog.html">Blog</a></li>
+                                            <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-1.html">Apartment</a></li>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-2.html">Home</a></li>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-1.html">Office</a></li>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-2.html">Windows</a></li>
+                                            <li class="mil-up-text mil-hover-m-4 mil-mb-20 mil-up"><a href="service-1.html">Pool</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mil-dots mil-up"></div>
+                        <div class="row mil-p-f-60 mil-sm-column-r">
+                            <div class="col-lg-7 col-md-6 col-sm-12 mil-column mil-jcb mil-mb-60">
+                                <ul class="mil-aic mil-mb-30 mil-up">
+                                    <li class="mil-mr-20 mil-fs-20 mil-m-3">
+                                        <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                                            <i class="far fa-circle"></i>
+                                        </a>
+                                    </li>
+                                    <li class="mil-mr-20 mil-fs-20 mil-m-3">
+                                        <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                                            <i class="far fa-circle"></i>
+                                        </a>
+                                    </li>
+                                    <li class="mil-mr-20 mil-fs-20 mil-m-3">
+                                        <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                                            <i class="far fa-circle"></i>
+                                        </a>
+                                    </li>
+                                    <li class="mil-fs-20 mil-m-3">
+                                        <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                                            <i class="far fa-circle"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="mil-aic mil-up">
+                                    <li class="mil-hover-m-4 mil-mr-20">
+                                        <a href="contact.html">Privacy Policy</a>
+                                    </li>
+                                    <li class="mil-hover-m-4 mil-mr-20">
+                                        <a href="contact.html">Terms and conditions</a>
+                                    </li>
+                                    <li class="mil-hover-m-4 mil-mr-20">
+                                        <a href="contact.html">Cookie Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-5 col-md-6 col-sm-12 mil-mb-60">
+                                <div class="row mil-jcb">
+                                    <div class="col-6 mil-up">
+                                        <h5 class="mil-fs-22 mil-fw-600 mil-m-3 mil-mb-20">Springfield</h5>
+                                        <p class="mil-mb-20">71 South Los Carneros Road, <br>Goleta, California 93117</p>
+                                        <p class="mil-up-text mil-a-1">+1-877-926-5184</p>
+                                    </div>
+                                    <div class="col-6 mil-up">
+                                        <h5 class="mil-fs-22 mil-fw-600 mil-m-3 mil-mb-20">Greenville</h5>
+                                        <p class="mil-mb-20">71 South Los Carneros Road, <br>Goleta, California 93117</p>
+                                        <p class="mil-up-text mil-a-1">+31 174 705 811</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mil-dots mil-up"></div>
+                        <div class="mil-footer-bottom mil-aic mil-jcb mil-up">
+                            <p>© Copyright 2023 - Mil. All Rights Reserved.</p>
+                            <p>Author: <a href="https://themeforest.net/user/millerdigitaldesign/portfolio" target="_blank" data-no-swup class="mil-text-link mil-a-1">Nazar Miller</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer end -->
+
+        </div>
+        <!-- dynamic content end -->
+
+    </div>
+    <!-- page wrapper end -->
+
+    <!-- swup js -->
+    <script src=" js/plugins/swup.min.js"></script>
+    <!-- swup body class plugin -->
+    <script src="js/plugins/SwupBodyClassPlugin.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/scroll-trigger.js"></script>
+    <!-- lenis js -->
+    <script src="js/plugins/lenis.js"></script>
+    <!-- cleave js -->
+    <script src="js/plugins/cleave.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- fancybox js -->
+    <script src="js/plugins/fancybox.js"></script>
+    <!-- calculator js -->
+    <script src="js/plugins/calculator.js"></script>
+    <!-- main js -->
+    <script src="js/main.js"></script>
+
+</body>
