@@ -1043,13 +1043,6 @@ margins
   margin-bottom: 10rem;
 }
 
-.mil-pl-5 {
-  margin-left: 0.5rem;
-}
-.mil-pl-15 {
-  margin-left: 1.5rem;
-}
-
 .mil-ml-0 {
   margin-left: 0;
 }
@@ -2275,67 +2268,6 @@ hero 3
   }
 }
 
-@media (max-height: 500px) {
-  .mil-hero-3 {
-    height: auto;
-  }
-  .mil-hero-3 .mil-hero-right-image {
-    border-radius: 1rem !important;
-    height: auto !important;
-    overflow: visible !important;
-    position: relative;
-    margin-bottom: 30px;
-  }
-
-  .mil-hero-3 .mil-hero-right-image img {
-    position: relative !important;
-    height: 60rem !important;
-    width: 100%;
-    object-fit: contain !important;
-  }
-}
-@media (max-width: 575px) {
-  .mil-hero-right-image {
-    height: auto !important;
-  }
-
-  .mil-hero-3 .mil-hero-right-image {
-    border-radius: 1rem !important;
-    height: auto !important;
-    overflow: visible !important;
-    position: relative;
-    margin-bottom: 30px;
-  }
-
-  .mil-hero-3 .mil-hero-right-image img {
-    position: relative !important;
-    height: 60rem !important;
-    width: 100%;
-    object-fit: contain !important;
-  }
-}
-@media (max-width: 750px) {
-  .mil-hero-right-image {
-    border-radius: 1rem !important;
-    height: auto !important;
-  }
-
-  .mil-hero-3 .mil-hero-right-image {
-    border-radius: 1rem !important;
-    height: auto !important;
-    overflow: visible !important;
-    position: relative;
-    margin-bottom: 30px;
-  }
-
-  .mil-hero-3 .mil-hero-right-image img {
-    border-radius: 1rem !important;
-    position: relative !important;
-    height: 60rem !important;
-    width: 100%;
-    object-fit: contain !important;
-  }
-}
 /* -------------------------------------------
 
 hero 4
@@ -3074,7 +3006,7 @@ main menu
 }
 .mil-main-menu ul li {
   height: 100%;
-  margin-right: 3rem;
+  margin-right: 5rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5877,23 +5809,4 @@ pagination
   width: 100% !important;
   height: auto !important;
   margin: 1rem 0rem 0rem 0rem;
-}
-/* Hide image on small screens */
-@media (max-width: 767px) {
-  .hide-on-sm {
-    display: none !important;
-  }
-}
-/* Hide on medium screens (md: 768px – 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  .hide-on-md {
-    display: none !important;
-  }
-}
-
-/* Hide on large screens (lg: ≥ 992px) */
-@media (min-width: 992px) {
-  .hide-on-lg {
-    display: none !important;
-  }
 }
