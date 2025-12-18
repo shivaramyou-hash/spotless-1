@@ -1,0 +1,305 @@
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7fafc;
+  color: #2c3e50;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+.container {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #5a6a7f;
+  margin-top: 6px;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ===============================
+   STATS CARDS
+================================ */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+.card label {
+  font-size: 0.85rem;
+  color: #4a5568;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.card strong {
+  font-size: 1.9rem;
+}
+
+/* Card colors */
+.initiated-card strong {
+  color: #3730a3;
+}
+.pending-card strong {
+  color: #b45309;
+}
+.progress-card strong {
+  color: #0e7490;
+}
+.completed-card strong {
+  color: #047857;
+}
+
+/* ===============================
+   TABLE CONTAINER
+================================ */
+.table-container {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+/* ===============================
+   TOP BAR
+================================ */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 320px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: #f3f6f8;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #37517e;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.filter-btn.active {
+  background: #121725;
+  color: #ffffff;
+}
+
+/* ===============================
+   TABLE
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #f3f6f8;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+th {
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+tbody tr:not(:last-child) {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+/* ===============================
+   CONTACT INFO
+================================ */
+.contact-info strong {
+  display: block;
+  font-weight: 700;
+}
+
+.contact-info div {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ===============================
+   MESSAGE
+================================ */
+.message {
+  max-width: 260px;
+  color: #475569;
+}
+
+/* ===============================
+   STATUS BADGE
+================================ */
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-initiated {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status-in-progress {
+  background: #cffafe;
+  color: #0e7490;
+}
+
+.status-completed {
+  background: #d1fae5;
+  color: #047857;
+}
+
+/* ===============================
+   ACTION PILLS
+================================ */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.action-pill.initiated {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.action-pill.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.action-pill.in-progress {
+  background: #cffafe;
+  color: #0e7490;
+}
+
+.action-pill.completed {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.action-pill.delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
