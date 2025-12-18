@@ -16,7 +16,7 @@ body {
    LAYOUT
 ================================ */
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 24px auto;
   padding: 0 16px;
 }
@@ -34,29 +34,29 @@ body {
 }
 
 h1 {
-  font-weight: 900;
-  font-size: 2.4rem;
+  font-weight: 800;
+  font-size: 2.2rem;
   margin: 0;
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: #5a6a7f;
+  font-size: 0.95rem;
+  color: #6b7280;
   margin-top: 6px;
 }
 
 .logout-btn {
-  background: #ef4444;
-  color: #ffffff;
+  background: #e5e7eb;
+  color: #374151;
   border: none;
-  padding: 10px 18px;
+  padding: 9px 16px;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .logout-btn:hover {
-  background: #dc2626;
+  background: #d1d5db;
 }
 
 /* ===============================
@@ -72,33 +72,34 @@ h1 {
 .card {
   background: #ffffff;
   border-radius: 14px;
-  padding: 22px 24px;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+  padding: 20px 22px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .card label {
-  font-size: 0.85rem;
-  color: #4a5568;
+  font-size: 0.8rem;
+  color: #6b7280;
   margin-bottom: 6px;
   display: block;
 }
 
 .card strong {
-  font-size: 1.9rem;
+  font-size: 1.7rem;
+  font-weight: 700;
 }
 
-/* Card colors */
+/* Muted card colors */
 .initiated-card strong {
-  color: #3730a3;
+  color: #4f46e5;
 }
 .pending-card strong {
-  color: #b45309;
+  color: #92400e;
 }
 .progress-card strong {
-  color: #0e7490;
+  color: #0369a1;
 }
 .completed-card strong {
-  color: #047857;
+  color: #166534;
 }
 
 /* ===============================
@@ -107,8 +108,8 @@ h1 {
 .table-container {
   background: #ffffff;
   border-radius: 14px;
-  padding: 24px 28px;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+  padding: 22px 26px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 /* ===============================
@@ -126,12 +127,15 @@ h1 {
 .search-input {
   width: 100%;
   max-width: 320px;
-  padding: 10px 14px;
+  padding: 9px 14px;
   border-radius: 10px;
-  border: 1.5px solid #cbd5e1;
-  font-size: 0.95rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
 }
 
+/* ===============================
+   FILTER BUTTONS
+================================ */
 .filter-buttons {
   display: flex;
   gap: 10px;
@@ -139,18 +143,18 @@ h1 {
 }
 
 .filter-btn {
-  background: #f3f6f8;
-  border: none;
-  padding: 9px 16px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 8px 14px;
   border-radius: 999px;
   font-weight: 600;
-  color: #37517e;
+  color: #475569;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .filter-btn.active {
-  background: #121725;
+  background: #1f2937;
   color: #ffffff;
 }
 
@@ -169,8 +173,9 @@ thead {
 th,
 td {
   padding: 12px 10px;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   text-align: left;
+  vertical-align: top;
 }
 
 th {
@@ -180,7 +185,7 @@ th {
 }
 
 tbody tr:not(:last-child) {
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .loading {
@@ -197,7 +202,7 @@ tbody tr:not(:last-child) {
 }
 
 .contact-info div {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #64748b;
   margin-top: 4px;
 }
@@ -211,76 +216,129 @@ tbody tr:not(:last-child) {
 }
 
 /* ===============================
-   STATUS BADGE
+   STATUS BADGE (MUTED)
 ================================ */
 .status-badge {
   padding: 6px 14px;
   border-radius: 999px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
+  display: inline-block;
 }
 
 .status-initiated {
-  background: #e0e7ff;
-  color: #3730a3;
+  background: #eef2ff;
+  color: #4f46e5;
 }
 
 .status-pending {
-  background: #fef3c7;
-  color: #b45309;
+  background: #fefce8;
+  color: #92400e;
 }
 
 .status-in-progress {
-  background: #cffafe;
-  color: #0e7490;
+  background: #f0f9ff;
+  color: #0369a1;
 }
 
 .status-completed {
-  background: #d1fae5;
-  color: #047857;
+  background: #f0fdf4;
+  color: #166534;
 }
 
 /* ===============================
-   ACTION PILLS
+   ACTIONS – COLUMN LAYOUT
 ================================ */
-.actions {
+.actions-column {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
 }
+
+.actions-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.delete-row {
+  margin-top: 4px;
+}
+
+/* ===============================
+   ACTION PILLS (DULL)
+================================ */
+/* ===============================
+   ACTIONS MAIN CONTAINER
+================================ */
+
+.actions-main {
+  display: flex;
+  flex-direction: column; /* stack action1 & action2 */
+  gap: 8px;
+}
+
+/* Each row (2 buttons per row) */
+.action1,
+.action2 {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===============================
+   ACTION PILL (DULL STYLE)
+================================ */
 
 .action-pill {
-  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 14px;
   border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+
   cursor: pointer;
-  user-select: none;
+  white-space: nowrap;
+
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+
+  transition: all 0.15s ease;
 }
 
+/* ===============================
+   MUTED STATUS COLORS
+================================ */
+
 .action-pill.initiated {
-  background: #e0e7ff;
-  color: #3730a3;
+  background: #eef2ff;
+  color: #4f46e5;
 }
 
 .action-pill.pending {
-  background: #fef3c7;
-  color: #b45309;
+  background: #fefce8;
+  color: #92400e;
 }
 
 .action-pill.in-progress {
-  background: #cffafe;
-  color: #0e7490;
+  background: #f0f9ff;
+  color: #0369a1;
 }
 
 .action-pill.completed {
-  background: #d1fae5;
-  color: #047857;
+  background: #f0fdf4;
+  color: #166534;
 }
 
-.action-pill.delete {
-  background: #fee2e2;
-  color: #b91c1c;
+/* Hover (very subtle) */
+.action-pill:hover {
+  background: #e5e7eb;
+  color: #1f2937;
 }
 
 /* ===============================
@@ -302,4 +360,24 @@ tbody tr:not(:last-child) {
     overflow-x: auto;
     white-space: nowrap;
   }
+}
+
+/* ===============================
+   DELETE ICON BUTTON
+================================ */
+
+.delete-icon {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+/* Slightly stronger hover for delete */
+.delete-icon:hover {
+  background: #fee2e2;
+  color: #991b1b;
 }

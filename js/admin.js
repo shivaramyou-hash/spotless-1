@@ -1,24 +1,24 @@
 console.log("admin.js loaded");
 
 // ================================
-// SUPABASE SAFE INIT (NO REDECLARE)
+// SUPABASE SAFE INIT
 // ================================
 const SUPABASE_URL = "https://hufqhcirhlbyslmexvgw.supabase.co";
 const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1ZnFoY2lyaGxieXNsbWV4dmd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwNzIwNjEsImV4cCI6MjA4MTY0ODA2MX0.wGklNcQiLAPrmZTyNYWzJxy4YJvZ239umL5HJU0kVQI";
 
-// ✅ reuse client if already created
 window.supabaseClient =
   window.supabaseClient ||
   window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// ✅ NEVER name this variable `supabase`
 const supabaseClient = window.supabaseClient;
 
 // ================================
 // GLOBAL STATE
 // ================================
 let allRows = [];
+let activeFilter = "All";
+let searchTerm = "";
 
 // ================================
 // DOM READY
@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const {
     data: { session },
   } = await supabaseClient.auth.getSession();
-
-  console.log("Session:", session);
 
   if (!session) {
     window.location.href = "../login.html";
@@ -43,6 +41,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.location.href = "../login.html";
   };
 
+  // Filter buttons
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((b) => b.classList.remove("active"));
+
+      btn.classList.add("active");
+      activeFilter = btn.dataset.filter;
+      renderTable();
+    });
+  });
+
+  // Search input
+  document.getElementById("searchInput").addEventListener("input", (e) => {
+    searchTerm = e.target.value.toLowerCase();
+    renderTable();
+  });
+
   fetchData();
 });
 
@@ -50,14 +67,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 // FETCH DATA
 // ================================
 async function fetchData() {
-  console.log("Fetching data...");
-
   const { data, error } = await supabaseClient
     .from("contact_form")
     .select("*")
     .order("created_on", { ascending: false });
-
-  console.log("API result:", data, error);
 
   if (error) {
     console.error("Fetch error:", error);
@@ -93,18 +106,31 @@ function updateCounts() {
 }
 
 // ================================
-// RENDER TABLE
+// RENDER TABLE (FILTER + SEARCH)
 // ================================
 function renderTable() {
   const tbody = document.getElementById("contactTableBody");
   tbody.innerHTML = "";
 
-  if (!allRows.length) {
-    tbody.innerHTML = `<tr><td colspan="6" class="loading">No records found</td></tr>`;
+  const filteredRows = allRows.filter((row) => {
+    const matchesStatus = activeFilter === "All" || row.status === activeFilter;
+
+    const matchesSearch =
+      row.name?.toLowerCase().includes(searchTerm) ||
+      row.email?.toLowerCase().includes(searchTerm);
+
+    return matchesStatus && matchesSearch;
+  });
+
+  if (!filteredRows.length) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="6" class="loading">No matching records found</td>
+      </tr>`;
     return;
   }
 
-  allRows.forEach((row) => {
+  filteredRows.forEach((row) => {
     const statusClass = row.status.toLowerCase().replace(" ", "-");
 
     tbody.innerHTML += `
@@ -128,7 +154,8 @@ function renderTable() {
         <td>${new Date(row.created_on).toLocaleString()}</td>
 
         <td>
-          <div class="actions">
+          <div class="actions-main">
+           <div class="action1">
             <span class="action-pill initiated"
               onclick="updateStatus('${row.id}', 'Initiated')">
               Initiated
@@ -138,7 +165,8 @@ function renderTable() {
               onclick="updateStatus('${row.id}', 'Pending')">
               Pending
             </span>
-
+           </div>
+           <div class="action2">
             <span class="action-pill in-progress"
               onclick="updateStatus('${row.id}', 'In Progress')">
               In Progress
@@ -148,15 +176,15 @@ function renderTable() {
               onclick="updateStatus('${row.id}', 'Completed')">
               Completed
             </span>
+     
 
-            <span class="action-pill delete"
-              onclick="deleteRow('${row.id}')">
-              Delete
-            </span>
+          </div>
+          
+          
           </div>
         </td>
-      </tr>
-    `;
+       
+      </tr>`;
   });
 }
 
@@ -164,8 +192,6 @@ function renderTable() {
 // UPDATE STATUS
 // ================================
 async function updateStatus(id, status) {
-  console.log("Updating status:", id, status);
-
   const { error } = await supabaseClient
     .from("contact_form")
     .update({ status })
