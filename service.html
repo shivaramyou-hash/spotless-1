@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Cleaning Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Cleandy CSS -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ===== Full Screen Services ===== */
+        .services-full {
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .services-nav {
+            background: #f5f5f5;
+            padding: 4rem 3rem;
+        }
+
+        .services-nav h2 {
+            margin-bottom: 3rem;
+        }
+
+        .services-menu li {
+            list-style: none;
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: .3s;
+        }
+
+        .services-menu li.active,
+        .services-menu li:hover {
+            opacity: 1;
+            color: #5a8cf5;
+        }
+
+        .services-content {
+            padding: 4rem 5rem;
+        }
+
+        .service-panel {
+            display: none;
+            max-width: 700px;
+        }
+
+        .service-panel.active {
+            display: block;
+        }
+
+        .service-panel h3 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-panel p {
+            font-size: 1.1rem;
+            opacity: 0.75;
+            margin-bottom: 2rem;
+        }
+
+        .service-points li {
+            margin-bottom: .7rem;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 992px) {
+            .services-full {
+                flex-direction: column;
+            }
+
+            .services-content {
+                padding: 3rem 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== FULL SCREEN SERVICES ===== -->
+    <section class="services-full">
+
+        <!-- LEFT NAV -->
+        <div class="col-lg-4 services-nav">
+            <h2>Cleaning<br>Services</h2>
+            <ul class="services-menu">
+                <li class="active" data-target="commercial">Commercial Cleaning</li>
+                <li data-target="residential">Residential Cleaning</li>
+                <li data-target="deep">Deep Cleaning & Sanitization</li>
+                <li data-target="carpet">Carpet & Upholstery</li>
+                <li data-target="window">Window Cleaning</li>
+                <li data-target="floor">Floor Care</li>
+            </ul>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-8 services-content">
+
+            <!-- Commercial -->
+            <div class="service-panel active" id="commercial">
+                <h3>Commercial Cleaning</h3>
+                <p>Professional cleaning solutions for offices, retail spaces, and commercial facilities.</p>
+                <ul class="service-points">
+                    <li>Office cleaning</li>
+                    <li>Retail store cleaning</li>
+                    <li>Warehouse cleaning</li>
+                    <li>Common area maintenance</li>
+                    <li>Restroom sanitization</li>
+                </ul>
+                <a href="#" class="mil-btn mil-bg-a-1 mil-br-xl">Learn more</a>
+            </div>
+
+            <!-- Residential -->
+            <div class="service-panel" id="residential">
+                <h3>Residential Cleaning</h3>
+                <p>Reliable and detailed home cleaning for apartments, villas, and Airbnb properties.</p>
+                <ul class="service-points">
+                    <li>Homes & apartments, Airbnb</li>
+                    <li>Living room cleaning</li>
+                    <li>Kitchen cleaning</li>
+                    <li>Bathroom cleaning</li>
+                    <li>Trash removal</li>
+                </ul>
+                <a href="#" class="mil-btn mil-bg-a-1 mil-br-xl">Learn more</a>
+            </div>
+
+            <!-- Deep Cleaning -->
+            <div class="service-panel" id="deep">
+                <h3>Deep Cleaning & Sanitization</h3>
+                <p>Intensive cleaning services designed for hygiene-critical environments.</p>
+                <ul class="service-points">
+                    <li>Post-construction cleaning</li>
+                    <li>Medical facility sanitization</li>
+                    <li>High-touch surface disinfection</li>
+                    <li>Odor removal</li>
+                    <li>Deep stain removal</li>
+                </ul>
+                <a href="#" class="mil-btn mil-bg-a-1 mil-br-xl">Learn more</a>
+            </div>
+
+            <!-- Carpet -->
+            <div class="service-panel" id="carpet">
+                <h3>Carpet & Upholstery Cleaning</h3>
+                <p>Restore freshness and extend the life of carpets and furniture.</p>
+                <ul class="service-points">
+                    <li>Carpet vacuuming</li>
+                    <li>Deep carpet shampooing</li>
+                    <li>Sofa & upholstery cleaning</li>
+                    <li>Stain and odor removal</li>
+                    <li>Fabric protection treatment</li>
+                </ul>
+                <a href="#" class="mil-btn mil-bg-a-1 mil-br-xl">Learn more</a>
+            </div>
+
+            <!-- Window -->
+            <div class="service-panel" id="window">
+                <h3>Window Cleaning</h3>
+                <p>Crystal-clear windows that enhance appearance and natural light.</p>
+                <ul class="service-points">
+                    <li>Interior window cleaning</li>
+                    <li>Exterior window cleaning</li>
+                    <li>Glass polishing</li>
+                    <li>Frame and sill cleaning</li>
+                    <li>Streak-free finish</li>
+                </ul>
+                <a href="#" class="mil-btn mil-bg-a-1 mil-br-xl">Learn more</a>
+            </div>
+
+            <!-- Floor -->
+            <div class="service-panel" id="floor">
+                <h3>Floor Care</h3>
+                <p>Professional maintenance to protect and restore floor surfaces.</p>
+                <ul class="service-points">
+                    <li>Floor stripping</li>
+                    <li>Waxing and polishing</li>
+                    <li>Tile and grout cleaning</li>
+                    <li>Hardwood floor care</li>
+                    <li>Shine restoration</li>
+                </ul>
+                <a href="#" class="mil-btn mil-bg-a-1 mil-br-xl">Learn more</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== SIMPLE JS ===== -->
+    <script>
+        const menu = document.querySelectorAll('.services-menu li');
+        const panels = document.querySelectorAll('.service-panel');
+
+        menu.forEach(item => {
+            item.addEventListener('click', () => {
+                menu.forEach(i => i.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+
+                item.classList.add('active');
+                document.getElementById(item.dataset.target).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
