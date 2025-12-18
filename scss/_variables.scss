@@ -3,16 +3,13 @@
 fonts
 
 ------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Outfit:wght@100..900&family=Reenie+Beanie&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Outfit:wght@100..900&family=Reenie+Beanie&display=swap");
 
-$font-1: "Outfit",
-sans-serif;
+$font-1: "Outfit", sans-serif;
 
-$font-2: "Reenie Beanie",
-cursive;
+$font-2: "Reenie Beanie", cursive;
 
-$font-3: "Monoton",
-serif;
+$font-3: "Monoton", serif;
 
 /* -------------------------------------------
 
@@ -44,8 +41,8 @@ $m-3: lighten($m-1, 73%);
 $m-4: #fff;
 $m-5: darken($m-1, 12%);
 
-$a-1: #EDCE29;
-$a-2: #5A8CF5;
+$a-1: #ffc169;
+$a-2: #5a8cf5;
 
 /* -------------------------------------------
 
@@ -61,7 +58,7 @@ shadow basic
 
 ------------------------------------------- */
 
-$shadow: 0 .5rem 1rem rgba($m-5, .03);
+$shadow: 0 0.5rem 1rem rgba($m-5, 0.03);
 
 /* -------------------------------------------
 
@@ -85,7 +82,7 @@ trasition
 
 ------------------------------------------- */
 
-$t-sm: .2s cubic-bezier(0, 0, 0.3642, 1);
-$t-md: .4s cubic-bezier(0, 0, 0.3642, 1);
-$t-lg: .6s cubic-bezier(0, 0, 0.3642, 1);
-$t-xl: .8s cubic-bezier(0, 0, 0.3642, 1);
+$t-sm: 0.2s cubic-bezier(0, 0, 0.3642, 1);
+$t-md: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+$t-lg: 0.6s cubic-bezier(0, 0, 0.3642, 1);
+$t-xl: 0.8s cubic-bezier(0, 0, 0.3642, 1);
