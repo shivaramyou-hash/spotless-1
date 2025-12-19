@@ -1,28 +1,22 @@
 /* ===============================
    TOAST NOTIFICATION
 ================================ */
-
 .toast {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-
+  bottom: 30px;
+  right: 30px;
   min-width: 260px;
   padding: 14px 18px;
   border-radius: 12px;
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  background: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #ffffff;
-
+  background: #1f2937;
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(20px);
   pointer-events: none;
-
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  z-index: 9999;
 }
 
 .toast.show {
@@ -36,10 +30,6 @@
 
 .toast.error {
   background: #dc2626;
-}
-
-.toast.info {
-  background: #2563eb;
 }
 
 /* ===============================
