@@ -3100,6 +3100,13 @@ main menu
 .mil-main-menu ul li:last-child {
   margin-right: 0;
 }
+.mil-main-menu ul li a,
+.mil-main-menu ul li a:hover {
+  text-decoration: none;
+}
+.mil-right a:hover {
+  text-decoration: none;
+}
 .mil-main-menu ul li:before {
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
@@ -3194,9 +3201,7 @@ main menu
   -webkit-transform: translateY(0) scale(1);
   transform: translateY(0) scale(1);
 }
-.mil-main-menu.mil-scroll ul li:before {
-  top: 44.5%;
-}
+
 .mil-main-menu.mil-scroll ul li ul {
   top: 100%;
   border-radius: 0 0 1rem 1rem;
@@ -3608,6 +3613,10 @@ forms
   transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
 }
 .mil-input-frame .mil-select-dropdown {
+  max-height: 28rem; /* control height */
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
   position: absolute;
   top: 8.5rem;
   z-index: 999;
@@ -3666,6 +3675,28 @@ forms
   left: 0;
   opacity: 0;
 }
+.mil-input-frame .mil-select-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mil-input-frame .mil-select-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.mil-input-frame .mil-select-dropdown::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.15);
+}
+.mil-input-frame .mil-select-dropdown {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.15);
+}
+@media (max-height: 700px) {
+  .mil-input-frame .mil-select-dropdown {
+    max-height: 22rem;
+  }
+}
+
 .mil-input-frame.mil-active i {
   -webkit-transform: rotate(0);
   transform: rotate(0);
