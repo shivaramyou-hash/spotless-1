@@ -52,7 +52,6 @@ async function handleSubmit(e) {
       phone,
       services,
       message,
-      status: "Initiated",
     },
   ]);
 

@@ -53,8 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const options = {
     containers: ["#swupMain", "#swupMenu"],
     animateHistoryBrowsing: true,
-    linkSelector:
-      'a:not([data-no-swup"]):not([href^="#"]):not([href^="tel:"]):not([href^="mailto:"]):not([href^="https://wa.me"]):not([href^="https://api.whatsapp.com"])',
+    linkSelector: 'a:not([data-no-swup]):not([href^="#"])',
     plugins: [new SwupBodyClassPlugin()],
   };
 
