@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const options = {
     containers: ["#swupMain", "#swupMenu"],
     animateHistoryBrowsing: true,
-    linkSelector: 'a:not([data-no-swup]):not([href^="#"])',
+    linkSelector:
+      'a:not([data-no-swup"]):not([href^="#"]):not([href^="tel:"]):not([href^="mailto:"]):not([href^="https://wa.me"]):not([href^="https://api.whatsapp.com"])',
     plugins: [new SwupBodyClassPlugin()],
   };
 
@@ -128,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
+      // ✅ Ignore WhatsApp button
+      if (this.classList.contains("mil-whatsapp")) return;
       e.preventDefault();
       const targetId = this.getAttribute("href");
       const targetElement = document.querySelector(targetId);
@@ -476,9 +479,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initPopup();
 
-  setTimeout(function () {
-    document.querySelector(".mil-discount-popup").classList.add("mil-active");
-  }, 20000);
+  // setTimeout(function () {
+  //   document.querySelector(".mil-discount-popup").classList.add("mil-active");
+  // }, 20000);
 
   /* -------------------------------------------
         
@@ -491,8 +494,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     phoneInputs.forEach(function (phoneInput) {
       var cleave = new Cleave(phoneInput, {
-        delimiters: ["(", ")", "-", "-"],
-        blocks: [3, 3, 3, 2, 2],
+        blocks: [4, 8],
         prefix: "+230",
         numericOnly: true,
         noImmediatePrefix: true,
@@ -648,6 +650,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
+        // ✅ Ignore WhatsApp button
+        if (this.classList.contains("mil-whatsapp")) return;
+
         e.preventDefault();
         const targetId = this.getAttribute("href");
         const targetElement = document.querySelector(targetId);
