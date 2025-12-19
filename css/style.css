@@ -235,7 +235,7 @@ blockquote {
 
 .mil-page-wrapper {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden !important;
   width: 100%;
 }
 
