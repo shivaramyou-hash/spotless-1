@@ -2784,7 +2784,7 @@ inner page hero
 
 ------------------------------------------- */
 .mil-hero-inner {
-  padding-top: 29rem;
+  padding-top: 20rem;
   padding-bottom: 10rem;
 }
 @media (max-width: 992px) {
@@ -4229,6 +4229,31 @@ blog
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
+}
+.mil-port-cover--two {
+  display: flex;
+  gap: 2rem; /* space between images */
+  padding-bottom: 0; /* disable aspect-ratio trick */
+  height: 450px; /* adjust as needed */
+}
+
+.mil-port-cover--two img {
+  position: relative; /* override absolute */
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+@media (max-width: 768px) {
+  .mil-port-cover--two {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .mil-port-cover--two img {
+    width: 100%;
+    height: 280px;
+  }
 }
 
 .mil-publication {

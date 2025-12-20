@@ -74,6 +74,21 @@ document.addEventListener("DOMContentLoaded", function () {
     touchMultiplier: 2,
     infinite: false,
   });
+  function scrollToHash() {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          lenis.scrollTo(target, {
+            offset: -120, // header height
+            duration: 1.2,
+          });
+        }, 300);
+      }
+    }
+  }
+
+  scrollToHash();
 
   lenis.on("scroll", ScrollTrigger.update);
 
@@ -630,6 +645,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ------------------------------------------------------------
     ----------------------------------------------------------*/
   document.addEventListener("swup:contentReplaced", function () {
+    scrollToHash();
+
     window.scrollTo(0, 0);
     lenis.scrollTo(0, {
       immediate: true,
@@ -690,5 +707,3 @@ document.querySelectorAll(".mil-select-dropdown").forEach((dropdown) => {
     e.stopPropagation();
   });
 });
-
-dropdown.addEventListener("wheel", (e) => e.stopPropagation());
