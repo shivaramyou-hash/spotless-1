@@ -53,8 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const options = {
     containers: ["#swupMain", "#swupMenu"],
     animateHistoryBrowsing: true,
-    linkSelector:
-      'a:not([data-no-swup"]):not([href^="#"]):not([href^="tel:"]):not([href^="mailto:"]):not([href^="https://wa.me"]):not([href^="https://api.whatsapp.com"])',
+    linkSelector: 'a:not([data-no-swup]):not([href^="#"])',
     plugins: [new SwupBodyClassPlugin()],
   };
 
@@ -520,6 +519,7 @@ document.addEventListener("DOMContentLoaded", function () {
     custom select
             
     ------------------------------------------- */
+
   const initSelect = () => {
     document.querySelectorAll(".mil-custom-select").forEach((customSelect) => {
       const selectBtn = customSelect.querySelector(".mil-select-button");
@@ -528,34 +528,38 @@ document.addEventListener("DOMContentLoaded", function () {
         ".mil-select-dropdown li"
       );
 
-      if (selectBtn && selectedValue && optionsList.length > 0) {
-        selectBtn.addEventListener("click", () => {
-          customSelect.classList.toggle("mil-active");
-        });
+      if (!selectBtn || !selectedValue || optionsList.length === 0) return;
 
-        optionsList.forEach((option) => {
-          function handler(e) {
-            if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
-              selectedValue.textContent = option.children[1].textContent;
-              customSelect.classList.remove("mil-active");
-              if (!selectedValue.classList.contains("mil-selected")) {
-                selectedValue.classList.add("mil-selected");
-              }
-            }
-            if (e.key === "Enter") {
-              selectedValue.textContent = option.textContent;
-              customSelect.classList.remove("mil-active");
-              if (!selectedValue.classList.contains("mil-selected")) {
-                selectedValue.classList.add("mil-selected");
-              }
-            }
+      // Toggle dropdown
+      selectBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // prevent document click
+        customSelect.classList.toggle("mil-active");
+      });
+
+      // Select option
+      optionsList.forEach((option) => {
+        const handler = (e) => {
+          if (e.type === "click" || e.key === "Enter") {
+            selectedValue.textContent =
+              option.querySelector("label").textContent;
+            selectedValue.classList.add("mil-selected");
+            customSelect.classList.remove("mil-active");
           }
-          option.addEventListener("keyup", handler);
-          option.addEventListener("click", handler);
-        });
-      }
+        };
+
+        option.addEventListener("click", handler);
+        option.addEventListener("keyup", handler);
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!customSelect.contains(e.target)) {
+          customSelect.classList.remove("mil-active");
+        }
+      });
     });
   };
+
   initSelect();
 
   /* -------------------------------------------
@@ -681,3 +685,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ScrollTrigger.refresh();
   });
 });
+document.querySelectorAll(".mil-select-dropdown").forEach((dropdown) => {
+  dropdown.addEventListener("wheel", (e) => {
+    e.stopPropagation();
+  });
+});
+
+dropdown.addEventListener("wheel", (e) => e.stopPropagation());
