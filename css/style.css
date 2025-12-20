@@ -4118,7 +4118,7 @@ blog
 }
 .mil-blog-card .mil-cover .mil-category {
   position: absolute;
-  top: 3rem;
+  bottom: 3rem;
   left: 3rem;
 }
 .mil-blog-card .mil-descr {
