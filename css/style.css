@@ -480,6 +480,15 @@ flex
   -ms-flex-align: end;
   align-items: flex-end;
 }
+.mobile-only {
+  display: list-item;
+}
+
+@media (min-width: 992px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
 
 @media (max-width: 1200px) {
   .mil-lg-flex {
