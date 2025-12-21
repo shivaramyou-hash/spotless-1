@@ -4269,6 +4269,9 @@ blog
     height: 280px;
     object-fit: contain; /* 👈 full image */
   }
+  .mil-img-wrap {
+    width: 100%; /* 👈 full width */
+  }
 }
 
 .mil-publication {
