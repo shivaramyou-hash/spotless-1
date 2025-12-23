@@ -16,7 +16,7 @@
   content: "";
   position: fixed;
   inset: 0;
-  background: url("../img/ui/bg.png") center / cover no-repeat;
+  background: url("../../img/ui/bg.png") center / cover no-repeat;
   z-index: -1;
 }
 
