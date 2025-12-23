@@ -55,6 +55,29 @@ async function handleSubmit(e) {
     },
   ]);
 
+  if (!error) {
+    showToast("✅ Request submitted successfully!", "success");
+    // 🔔 Trigger notification (fire-and-forget)
+    fetch(
+      "https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/send-contact-notification",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({
+          type: "contact",
+          name,
+          email,
+          phone,
+          services,
+          message,
+        }),
+      }
+    );
+  }
+
   submitBtn.classList.remove("loading");
 
   if (error) {
@@ -93,6 +116,26 @@ async function handleCallbackSubmit(e) {
     },
   ]);
 
+  if (!error) {
+    showToast("📞 We will call you back shortly!", "success");
+    // 🔔 Fire notification (no blocking)
+    fetch(
+      "https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/send-contact-notification",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({
+          type: "callback",
+          name,
+          phone,
+        }),
+      }
+    );
+  }
+
   // ✅ REMOVE ANIMATION
   submitBtn.classList.remove("loading");
 
@@ -102,7 +145,6 @@ async function handleCallbackSubmit(e) {
     return;
   }
 
-  showToast("📞 We will call you back shortly!", "success");
   e.target.reset();
 }
 
