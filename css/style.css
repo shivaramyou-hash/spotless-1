@@ -1050,6 +1050,10 @@ margins
 .mil-mb-40 {
   margin-bottom: 4rem;
 }
+.mil-mt-20-mb-40 {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
 
 .mil-mb-60 {
   margin-bottom: 6rem;
@@ -5382,6 +5386,7 @@ steps
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   position: relative;
+  height: 100%;
 }
 .mil-step-card.mil-step-line:before {
   content: "";
