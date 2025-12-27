@@ -1,784 +1,584 @@
 <!DOCTYPE html>
 <html lang="zxx">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- chome mobile panel color -->
-    <meta name="theme-color" content="#ffc169" />
-    <!-- favicon -->
-    <link
-      rel="shortcut icon"
-      href="../img/ui/favicon.png"
-      type="image/x-icon"
-    />
 
-    <!-- bootstrap grid css -->
-    <link rel="stylesheet" href="../css/plugins/bootstrap-grid.css" />
-    <!-- swiper css -->
-    <link rel="stylesheet" href="../css/plugins/swiper.css" />
-    <!-- fancybox css -->
-    <link rel="stylesheet" href="../css/plugins/fancybox.css" />
-    <!-- font awesome css -->
-    <link rel="stylesheet" href="../css/plugins/fontawesome.css" />
-    <!-- main css -->
-    <link rel="stylesheet" href="../css/style.css" />
-    <!-- contacat css -->
-    <link rel="stylesheet" href="../css/contact.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- chome mobile panel color -->
+  <meta name="theme-color" content="#ffc169" />
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../img/ui/favicon.png" type="image/x-icon" />
 
-    <!-- Supabase -->
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <!-- bootstrap grid css -->
+  <link rel="stylesheet" href="../css/plugins/bootstrap-grid.css" />
+  <!-- swiper css -->
+  <link rel="stylesheet" href="../css/plugins/swiper.css" />
+  <!-- fancybox css -->
+  <link rel="stylesheet" href="../css/plugins/fancybox.css" />
+  <!-- font awesome css -->
+  <link rel="stylesheet" href="../css/plugins/fontawesome.css" />
+  <!-- main css -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- contacat css -->
+  <link rel="stylesheet" href="../css/contact.css" />
 
-    <!-- Contact form logic -->
-    <script src="../js/contact.js"></script>
-    <!-- page title -->
-    <title>Hygiene Cleaning | Spotless Mauritius</title>
-  </head>
+  <!-- Supabase -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
-  <body>
-    <!-- page wrapper -->
-    <div class="mil-page-wrapper">
-      <!-- static content -->
-      <div class="mil-preloader-frame">
-        <div class="mil-preloader-content">
-          <img src="../img/ui/logo2.png" alt="logo" />
-          <div class="mil-preloader">
-            <div class="mil-preload-line"></div>
-          </div>
-          <div class="mil-fs-18 mil-pre-text mil-m-1 mil-fw-600">
-            loading: <span class="mil-percent">00</span> %
-          </div>
+  <!-- Contact form logic -->
+  <script src="../js/contact.js"></script>
+  <!-- page title -->
+  <title>Hygiene Cleaning | Spotless Mauritius</title>
+</head>
+
+<body>
+  <!-- page wrapper -->
+  <div class="mil-page-wrapper">
+    <!-- static content -->
+    <div class="mil-preloader-frame">
+      <div class="mil-preloader-content">
+        <img src="../img/ui/logo2.png" alt="logo" />
+        <div class="mil-preloader">
+          <div class="mil-preload-line"></div>
+        </div>
+        <div class="mil-fs-18 mil-pre-text mil-m-1 mil-fw-600">
+          loading: <span class="mil-percent">00</span> %
         </div>
       </div>
-      <div class="mil-top-panel">
-        <div class="header-container">
-          <div class="mil-tp-content">
-            <div class="mil-left">
-              <a
-                href="/"
-                class="mil-logo mil-hover-bri-105"
-                style="width: 26rem"
-              >
-                <img src="../img/ui/logo2.png" alt="logo" />
-                <img src="../img/ui/logo2.png" alt="logo" class="mil-light" />
-              </a>
-            </div>
-            <nav class="mil-main-menu">
-              <ul id="swupMenu" class="mil-menu-transition mil-aic mil-m-4">
-                <li class="">
-                  <a href="/">Home</a>
-                </li>
-                <li class="">
-                  <a href="/cleaning-services"
-                    >CLEANING
-                    <br />
-                    SERVICES</a
-                  >
-                </li>
-                <li class="">
-                  <a href="/solar-cleaning"
-                    >SOLAR<br />
-                    CLEANING</a
-                  >
-                </li>
-                <li class="">
-                  <a href="/security-services"
-                    >SECURITY<br />
-                    SERVICES</a
-                  >
-                </li>
-                <li class=""><a href="/about-us">ABOUT US </a></li>
-              </ul>
-            </nav>
-            <div class="mil-right mil-jce">
-              <a
-                href="/contact"
-                class="mil-btn mil-lg mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-icon-btn mil-hover-scale mil-md-hidden"
-                ><span>Contact Us</span
-                ><i class="far fa-magic mil-bg-m-1 mil-a-1"></i
-              ></a>
-              <div class="mil-menu-btn">
-                <span></span>
-              </div>
+    </div>
+    <div class="mil-top-panel">
+      <div class="header-container">
+        <div class="mil-tp-content">
+          <div class="mil-left">
+            <a href="/" class="mil-logo mil-hover-bri-105" style="width: 26rem">
+              <img src="../img/ui/logo2.png" alt="logo" />
+              <img src="../img/ui/logo2.png" alt="logo" class="mil-light" />
+            </a>
+          </div>
+          <nav class="mil-main-menu">
+            <ul id="swupMenu" class="mil-menu-transition mil-aic mil-m-4">
+              <li class="">
+                <a href="/">Home</a>
+              </li>
+              <li class="">
+                <a href="/cleaning-services">CLEANING
+                  <br />
+                  SERVICES</a>
+              </li>
+              <li class="">
+                <a href="/solar-cleaning">SOLAR<br />
+                  CLEANING</a>
+              </li>
+              <li class="">
+                <a href="/security-services">SECURITY<br />
+                  SERVICES</a>
+              </li>
+              <li class=""><a href="/about-us">ABOUT US </a></li>
+            </ul>
+          </nav>
+          <div class="mil-right mil-jce">
+            <a href="/contact"
+              class="mil-btn mil-lg mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-icon-btn mil-hover-scale mil-md-hidden"><span>Contact
+                Us</span><i class="far fa-magic mil-bg-m-1 mil-a-1"></i></a>
+            <div class="mil-menu-btn">
+              <span></span>
             </div>
           </div>
         </div>
       </div>
-      <div class="mil-right-buttons-frame">
-        <div class="mil-order-call-window">
-          <div class="mil-ocw-content">
-            <div class="row mil-aic">
-              <div class="col-lg-7">
-                <form id="callbackForm">
-                  <h4 class="mil-fs-28 mil-mb-30">
-                    Leave your number, <br />and we'll call you back
-                  </h4>
-                  <div class="mil-input-frame mil-mb-15">
-                    <input
-                      type="text"
-                      id="user-name-2"
-                      name="user-name"
-                      placeholder="Name"
-                      class="mil-br-md mil-bg-m-3"
-                      autocomplete="name"
-                    />
-                    <i class="far fa-user mil-a-2"></i>
-                  </div>
-                  <div class="mil-input-frame mil-mb-30">
-                    <input
-                      type="tel"
-                      id="user-phone-2"
-                      name="user-tel"
-                      class="mil-phone-input mil-br-md mil-bg-m-3"
-                      placeholder="+230"
-                      autocomplete="tel"
-                    />
-                    <i class="far fa-mobile mil-a-2"></i>
-                  </div>
-                  <button
-                    class="mil-btn mil-bg-a-1 mil-icon-btn mil-br-xl mil-hover-bri-105 mil-hover-scale"
-                    type="submit"
-                  >
-                    Order a call<i
-                      class="far fa-arrow-right mil-bg-m-1 mil-a-1"
-                    ></i>
-                  </button>
-                </form>
-              </div>
-              <div class="col-lg-5">
-                <img
-                  src="../img/ui/cc.jpg"
-                  alt="callcenter"
-                  class="mil-ocw-img mil-br-sm"
-                />
-              </div>
+    </div>
+    <div class="mil-right-buttons-frame">
+      <div class="mil-order-call-window">
+        <div class="mil-ocw-content">
+          <div class="row mil-aic">
+            <div class="col-lg-7">
+              <form id="callbackForm">
+                <h4 class="mil-fs-28 mil-mb-30">
+                  Leave your number, <br />and we'll call you back
+                </h4>
+                <div class="mil-input-frame mil-mb-15">
+                  <input type="text" id="user-name-2" name="user-name" placeholder="Name" class="mil-br-md mil-bg-m-3"
+                    autocomplete="name" />
+                  <i class="far fa-user mil-a-2"></i>
+                </div>
+                <div class="mil-input-frame mil-mb-30">
+                  <input type="tel" id="user-phone-2" name="user-tel" class="mil-phone-input mil-br-md mil-bg-m-3"
+                    placeholder="+230" autocomplete="tel" />
+                  <i class="far fa-mobile mil-a-2"></i>
+                </div>
+                <button class="mil-btn mil-bg-a-1 mil-icon-btn mil-br-xl mil-hover-bri-105 mil-hover-scale"
+                  type="submit">
+                  Order a call<i class="far fa-arrow-right mil-bg-m-1 mil-a-1"></i>
+                </button>
+              </form>
+            </div>
+            <div class="col-lg-5">
+              <img src="../img/ui/cc.jpg" alt="callcenter" class="mil-ocw-img mil-br-sm" />
             </div>
           </div>
         </div>
-        <div class="mil-right-buttons">
-          <a href="#top" class="mil-side-btn mil-back-to-top mil-hover-bri-120">
-            <i class="far fa-arrow-up mil-a-1"></i>
-          </a>
-
-          <a
-            href="https://wa.me/+23057057240?text=Hello%20Spotless%20Mauritius%2C%20I%20would%20like%20to%20know%20more%20about%20your%20cleaning%20services."
-            data-no-swup
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mil-side-btn mil-whatsapp mil-hover-bri-120 mil-mb-10"
-            aria-label="Chat on WhatsApp"
-          >
-            <i class="fab fa-whatsapp"></i>
-          </a>
-
-          <button
-            class="mil-side-btn mil-open-window mil-hover-bri-120"
-          ></button>
-        </div>
       </div>
+      <div class="mil-right-buttons">
+        <a href="#top" class="mil-side-btn mil-back-to-top mil-hover-bri-120">
+          <i class="far fa-arrow-up mil-a-1"></i>
+        </a>
 
-      <!-- static content end -->
+        <a href="https://wa.me/+23057057240?text=Hello%20Spotless%20Mauritius%2C%20I%20would%20like%20to%20know%20more%20about%20your%20cleaning%20services."
+          data-no-swup target="_blank" rel="noopener noreferrer"
+          class="mil-side-btn mil-whatsapp mil-hover-bri-120 mil-mb-10" aria-label="Chat on WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
 
-      <!-- dynamic content -->
-      <div id="swupMain" class="transition-fade">
-        <!-- hero -->
-        <div class="mil-hero-inner mil-relative" id="top">
-          <img
-            src="../img/ui/bg.png"
-            alt="background"
-            class="mil-bg"
-            style="top: 0"
-          />
-          <div class="container mil-column mil-jcb mil-h-100">
-            <div class="row mil-jcb mil-h-100">
-              <div class="col-lg-7 mil-mb-60">
-                <div class="mil-main-title mil-jcc mil-ais mil-column">
-                  <div class="mil-column mil-sm-mb-0 mil-w-100">
-                    <div class="mil-aic">
-                      <div class="mil-word-frame">
-                        <h1 class="mil-fs-100 mil-sm-fs-72 mil-lh-110">
-                          Emergency
-                        </h1>
-                      </div>
-                    </div>
-                    <div class="mil-word-frame mil-mb-60">
+        <button class="mil-side-btn mil-open-window mil-hover-bri-120"></button>
+      </div>
+    </div>
+
+    <!-- static content end -->
+
+    <!-- dynamic content -->
+    <div id="swupMain" class="transition-fade">
+      <!-- hero -->
+      <div class="mil-hero-inner mil-relative" id="top">
+        <img src="../img/ui/bg.png" alt="background" class="mil-bg" style="top: 0" />
+        <div class="container mil-column mil-jcb mil-h-100">
+          <div class="row mil-jcb mil-h-100">
+            <div class="col-lg-7 mil-mb-60">
+              <div class="mil-main-title mil-jcc mil-ais mil-column">
+                <div class="mil-column mil-sm-mb-0 mil-w-100">
+                  <div class="mil-aic">
+                    <div class="mil-word-frame">
                       <h1 class="mil-fs-100 mil-sm-fs-72 mil-lh-110">
-                        <img
-                          src="../img/ui/t11.png"
-                          alt="Hygiene Cleaning Services"
-                          class="mil-text-image mil-long"
-                        />
-                        Cleaning Services
+                        Emergency
                       </h1>
                     </div>
                   </div>
+                  <div class="mil-word-frame mil-mb-60">
+                    <h1 class="mil-fs-100 mil-sm-fs-72 mil-lh-110">
+                      <img src="../img/ui/t11.png" alt="Hygiene Cleaning Services" class="mil-text-image mil-long" />
+                      Cleaning Services
+                    </h1>
+                  </div>
                 </div>
               </div>
-              <div
-                class="mil-column col-lg-5 mil-jcb mil-aie mil-sm-ais mil-mb-60"
-              >
-                <ul class="mil-breadcrumbs mil-mb-60">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="">Hygiene Cleaning</a></li>
-                </ul>
-                <div class="mil-circle-text-position">
-                  <div
-                    class="mil-circle-text mil-rotate mil-accent-inside"
-                    data-value="360"
-                  >
-                    <svg
-                      version="1.1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 300 300"
-                      enable-background="new 0 0 300 300"
-                      xml:space="preserve"
-                    >
-                      <defs>
-                        <path
-                          id="circlePath"
-                          d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
-                        />
-                      </defs>
-                      <circle cx="150" cy="100" r="75" fill="none" />
-                      <g>
-                        <use xlink:href="#circlePath" fill="none" />
-                        <text
-                          class="mil-link mil-dark"
-                          style="letter-spacing: 0.75rem"
-                        >
-                          <textpath xlink:href="#circlePath">
-                            Scroll down - Scroll down -
-                          </textpath>
-                        </text>
-                      </g>
-                    </svg>
-                  </div>
-                  <a
-                    href="#scroll"
-                    class="far fa-arrow-down mil-bg-m-1 mil-a-1"
-                  ></a>
+            </div>
+            <div class="mil-column col-lg-5 mil-jcb mil-aie mil-sm-ais mil-mb-60">
+              <ul class="mil-breadcrumbs mil-mb-60">
+                <li><a href="/">Home</a></li>
+                <li><a href="">Hygiene Cleaning</a></li>
+              </ul>
+              <div class="mil-circle-text-position">
+                <div class="mil-circle-text mil-rotate mil-accent-inside" data-value="360">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                    <defs>
+                      <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                    </defs>
+                    <circle cx="150" cy="100" r="75" fill="none" />
+                    <g>
+                      <use xlink:href="#circlePath" fill="none" />
+                      <text class="mil-link mil-dark" style="letter-spacing: 0.75rem">
+                        <textpath xlink:href="#circlePath">
+                          Scroll down - Scroll down -
+                        </textpath>
+                      </text>
+                    </g>
+                  </svg>
                 </div>
+                <a href="#scroll" class="far fa-arrow-down mil-bg-m-1 mil-a-1"></a>
               </div>
             </div>
           </div>
         </div>
-        <!-- hero end -->
+      </div>
+      <!-- hero end -->
 
-        <!-- cover -->
-        <div class="mil-p-0-f">
-          <div class="container">
-            <div class="mil-port-cover--two">
-              <div class="mil-img-wrap">
-                <img
-                  src="../img/blog/20.png"
-                  alt="cover 1"
-                  class="mil-scale-img"
-                  data-value-1="1.2"
-                  data-value-2="1"
-                />
-              </div>
-              <div class="mil-img-wrap">
-                <img
-                  src="../img/blog/22.png"
-                  alt="cover 2"
-                  class="mil-scale-img"
-                  data-value-1="1.2"
-                  data-value-2="1"
-                />
-              </div>
+      <!-- cover -->
+      <div class="mil-p-0-f">
+        <div class="container">
+          <div class="mil-port-cover--two">
+            <div class="mil-img-wrap">
+              <img src="../img/blog/20.png" alt="cover 1" class="mil-scale-img" data-value-1="1.2" data-value-2="1" />
+            </div>
+            <div class="mil-img-wrap">
+              <img src="../img/blog/22.png" alt="cover 2" class="mil-scale-img" data-value-1="1.2" data-value-2="1" />
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- cover end -->
+      <!-- cover end -->
 
-        <!-- blog -->
-        <div class="mil-p-0-15 mil-relative" id="scroll">
-          <div class="container">
-            <div class="row mil-jcb">
-              <div class="col-12 col-lg-8">
-                <div class="mil-publication mil-up mil-mb-15">
-                  <h4 class="mil-fs-36 mil-mb-30 mil-lh-120 mil-up">
-                    Professional Hygiene Cleaning Services <br />
-                    Throughout Mauritius
-                  </h4>
+      <!-- blog -->
+      <div class="mil-p-0-15 mil-relative" id="scroll">
+        <div class="container">
+          <div class="row mil-jcb">
+            <div class="col-12 col-lg-8">
+              <div class="mil-publication mil-up mil-mb-15">
+                <h4 class="mil-fs-36 mil-mb-30 mil-lh-120 mil-up">
+                  Professional Hygiene Cleaning Services <br />
+                  Throughout Mauritius
+                </h4>
 
-                  <p class="mil-fs-18 mil-mb-30 mil-lh-160 mil-up">
-                    The soap dispensers are empty, the air fresheners have run
-                    their course, and the hand dryers are acting up. Not to
-                    mention, the office toilet paper holders are far from
-                    satisfactory. But that’s where our professional hygiene
-                    services come in to transform your business back to its
-                    sparkling, well-maintained condition.
-                  </p>
+                <p class="mil-fs-18 mil-mb-30 mil-lh-160 mil-up">
+                  The soap dispensers are empty, the air fresheners have run
+                  their course, and the hand dryers are acting up. Not to
+                  mention, the office toilet paper holders are far from
+                  satisfactory. But that’s where our professional hygiene
+                  services come in to transform your business back to its
+                  sparkling, well-maintained condition.
+                </p>
 
-                  <h5 class="mil-fs-24 mil-mb-30 mil-up">
-                    Our Winning Hygiene Services
-                  </h5>
+                <h5 class="mil-fs-24 mil-mb-30 mil-up">
+                  Our Winning Hygiene Services
+                </h5>
 
-                  <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">
-                    Say goodbye to inadequate hygiene supplies and hello to a
-                    clean, fresh, and fully equipped environment your employees
-                    and clients will appreciate.
-                    <br /><br />
-                    <strong>Tailored Solutions:</strong> We understand that
-                    every business has unique hygiene requirements and provide
-                    customised solutions to suit your needs. <br /><br />
-                    <strong>Personal Touch:</strong> We operate with
-                    professional procedures, chemicals, and equipment while
-                    delivering a friendly, personal service through our trained
-                    team. <br /><br />
-                    <strong>Worry-Free Promise:</strong> If you are ever unhappy
-                    with any aspect of our most recent service, simply contact
-                    us and we will work with you to find a solution.
-                  </p>
+                <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">
+                  Say goodbye to inadequate hygiene supplies and hello to a
+                  clean, fresh, and fully equipped environment your employees
+                  and clients will appreciate.
+                  <br /><br />
+                  <strong>Tailored Solutions:</strong> We understand that
+                  every business has unique hygiene requirements and provide
+                  customised solutions to suit your needs. <br /><br />
+                  <strong>Personal Touch:</strong> We operate with
+                  professional procedures, chemicals, and equipment while
+                  delivering a friendly, personal service through our trained
+                  team. <br /><br />
+                  <strong>Worry-Free Promise:</strong> If you are ever unhappy
+                  with any aspect of our most recent service, simply contact
+                  us and we will work with you to find a solution.
+                </p>
 
-                  <h5 class="mil-fs-24 mil-mb-30 mil-up">
-                    Customised Hygiene Solutions
-                  </h5>
+                <h5 class="mil-fs-24 mil-mb-30 mil-up">
+                  Customised Hygiene Solutions
+                </h5>
 
-                  <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">
-                    At Spotless, we understand that every business has unique
-                    needs when it comes to maintaining a healthy, clean, and
-                    comfortable environment. Whether you operate a small office,
-                    a busy restaurant, or a large industrial facility, we
-                    provide customised hygiene solutions tailored to your
-                    requirements.
-                    <br /><br />
-                    Our commitment goes beyond supplying quality equipment. We
-                    provide consistent and reliable maintenance services,
-                    including scheduled inspections, dispenser refills, and
-                    necessary repairs or replacements allowing you to focus on
-                    running your business.
-                  </p>
+                <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">
+                  At Spotless, we understand that every business has unique
+                  needs when it comes to maintaining a healthy, clean, and
+                  comfortable environment. Whether you operate a small office,
+                  a busy restaurant, or a large industrial facility, we
+                  provide customised hygiene solutions tailored to your
+                  requirements.
+                  <br /><br />
+                  Our commitment goes beyond supplying quality equipment. We
+                  provide consistent and reliable maintenance services,
+                  including scheduled inspections, dispenser refills, and
+                  necessary repairs or replacements allowing you to focus on
+                  running your business.
+                </p>
 
-                  <h5 class="mil-fs-24 mil-mb-30 mil-up">
-                    Hygiene Products & Services
-                  </h5>
+                <h5 class="mil-fs-24 mil-mb-30 mil-up">
+                  Hygiene Products & Services
+                </h5>
 
-                  <p class="mil-fs-18 mil-mb-30 mil-lh-160 mil-up">
-                    Upon request, we can supply and service professional hygiene
-                    products through our trusted local and international
-                    suppliers.
-                  </p>
+                <p class="mil-fs-18 mil-mb-30 mil-lh-160 mil-up">
+                  Upon request, we can supply and service professional hygiene
+                  products through our trusted local and international
+                  suppliers.
+                </p>
 
-                  <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">
-                    <strong>Air Freshener Dispensers:</strong> Eliminate
-                    unpleasant odours and keep washrooms and shared spaces
-                    fragrant with programmable dispensers and long-lasting,
-                    high-quality fragrances. <br /><br />
-                    <strong>Hand & Seat Sanitisers:</strong> Quick-drying,
-                    pleasantly perfumed biological sanitisers designed for
-                    optimal hygiene. <br /><br />
-                    <strong>Paper Towel Dispensers:</strong> Manual and
-                    sensor-operated units that are cost-effective, durable, and
-                    capable of holding up to 600 folded towels. <br /><br />
-                    <strong>Hand Dryers:</strong> A range of reliable hand
-                    dryers and paper towel solutions to suit your requirements
-                    and budget. <br /><br />
-                    <strong>Toilet Hygiene Services:</strong> From toilet roll
-                    holders to touch-free sanitary bins and slimline sanibins,
-                    we provide hygienic solutions and cost-effective biohazard
-                    waste disposal. <br /><br />
-                    <strong>Wall-Mounted Soap Dispensers:</strong> Automatic and
-                    manual options available with cartridge or refill systems
-                    installed, refilled, and maintained by our team.
-                  </p>
+                <p class="mil-fs-18 mil-mb-60 mil-lh-160 mil-up">
+                  <strong>Air Freshener Dispensers:</strong> Eliminate
+                  unpleasant odours and keep washrooms and shared spaces
+                  fragrant with programmable dispensers and long-lasting,
+                  high-quality fragrances. <br /><br />
+                  <strong>Hand & Seat Sanitisers:</strong> Quick-drying,
+                  pleasantly perfumed biological sanitisers designed for
+                  optimal hygiene. <br /><br />
+                  <strong>Paper Towel Dispensers:</strong> Manual and
+                  sensor-operated units that are cost-effective, durable, and
+                  capable of holding up to 600 folded towels. <br /><br />
+                  <strong>Hand Dryers:</strong> A range of reliable hand
+                  dryers and paper towel solutions to suit your requirements
+                  and budget. <br /><br />
+                  <strong>Toilet Hygiene Services:</strong> From toilet roll
+                  holders to touch-free sanitary bins and slimline sanibins,
+                  we provide hygienic solutions and cost-effective biohazard
+                  waste disposal. <br /><br />
+                  <strong>Wall-Mounted Soap Dispensers:</strong> Automatic and
+                  manual options available with cartridge or refill systems
+                  installed, refilled, and maintained by our team.
+                </p>
 
-                  <blockquote
-                    class="mil-mb-60 mil-fs-24 mil-bg-a-2 mil-m-4 mil-lh-160 mil-up"
-                  >
-                    <i>
-                      “Say goodbye to leaks and hello to hassle-free soap
-                      dispensing with our professional hygiene solutions.”
-                    </i>
-                  </blockquote>
+                <blockquote class="mil-mb-60 mil-fs-24 mil-bg-a-2 mil-m-4 mil-lh-160 mil-up">
+                  <i>
+                    “Say goodbye to leaks and hello to hassle-free soap
+                    dispensing with our professional hygiene solutions.”
+                  </i>
+                </blockquote>
 
-                  <h5 class="mil-fs-24 mil-mb-30 mil-up">
-                    Our Worry-Free Promise
-                  </h5>
+                <h5 class="mil-fs-24 mil-mb-30 mil-up">
+                  Our Worry-Free Promise
+                </h5>
 
-                  <p class="mil-fs-18 mil-lh-160 mil-mb-15 mil-up">
-                    You can relax knowing your home or business is in good hands
-                    with the Spotless cleaning team. Our friendly and reliable
-                    professionals deliver consistently high-quality results. If
-                    you are not satisfied with our most recent visit, simply let
-                    us know and we will make it right.
-                  </p>
-                </div>
-
-                <div class="mil-publication mil-mb-15">
-                  <h2 class="mil-fs-36 mil-mb-60 mil-up">You may also like</h2>
-                  <div class="row">
-                    <div class="col-12 col-lg-6 mil-mb-15 mil-up">
-                      <a
-                        href="/commercial-cleaning"
-                        class="mil-blog-card mil-br-lg"
-                      >
-                        <div class="mil-cover">
-                          <img src="../img/blog/13.png" alt="cover" />
-                          <ul class="mil-category"></ul>
-                        </div>
-                        <div class="mil-descr mil-bg-m-3">
-                          <h5
-                            class="mil-fs-28 mil-m-1 mil-up mil-mb-15 mil-lh-140"
-                          >
-                            Commercial and
-                            <br class="mil-sm-hidden" />Industrial Cleaning
-                          </h5>
-                          <p class="mil-lh-180 mil-mb-30 mil-up">
-                            Specialized cleaning solutions tailored for offices,
-                            retail spaces, and business environments. Designed
-                            to maintain professional standards, support
-                            workplace hygiene, and enhance the daily experience
-                            for staff and visitors.
-                          </p>
-
-                          <div class="mil-up">
-                            <div
-                              class="mil-btn mil-sm mil-bg-m-2-light mil-br-xl mil-hover-bri-105 mil-hover-scale"
-                            >
-                              Read more
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-12 col-lg-6 mil-mb-15 mil-up">
-                      <a
-                        href="/carpet-upholstery-cleaning"
-                        class="mil-blog-card mil-br-lg"
-                      >
-                        <div class="mil-cover">
-                          <img src="../img/blog/20.png" alt="cover" />
-                          <ul class="mil-category"></ul>
-                        </div>
-                        <div class="mil-descr mil-bg-m-3">
-                          <h5
-                            class="mil-fs-28 mil-m-1 mil-up mil-mb-15 mil-lh-140"
-                          >
-                            Carpet & <br class="mil-sm-hidden" />
-                            Upholstery Cleaning
-                          </h5>
-
-                          <p class="mil-lh-180 mil-mb-30 mil-up">
-                            Specialized care for carpets, rugs, sofas, and
-                            fabric furnishings, removing embedded dust, stains,
-                            and odors while restoring freshness, texture, and
-                            comfort to interior spaces.
-                          </p>
-
-                          <div class="mil-up">
-                            <div
-                              class="mil-btn mil-sm mil-bg-m-2-light mil-br-xl mil-hover-bri-105 mil-hover-scale"
-                            >
-                              Read more
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <p class="mil-fs-18 mil-lh-160 mil-mb-15 mil-up">
+                  You can relax knowing your home or business is in good hands
+                  with the Spotless cleaning team. Our friendly and reliable
+                  professionals deliver consistently high-quality results. If
+                  you are not satisfied with our most recent visit, simply let
+                  us know and we will make it right.
+                </p>
               </div>
-              <div class="col-12 col-lg-4">
-                <div class="mil-sidebar mil-mb-f">
-                  <div class="mil-text-side mil-auto mil-mb-15 mil-up">
-                    <div class="mil-box-bg">
-                      <img src="../img/ui/t5.jpg" alt="bg" />
-                    </div>
-                    <div class="mil-text-frame mil-column mil-aic mil-w-100">
-                      <div class="mil-aic mil-mb-20">
-                        <p class="mil-tac">
-                          We clean objects of any <br />complexity and size in
-                          6-9 hours
+
+              <div class="mil-publication mil-mb-15">
+                <h2 class="mil-fs-36 mil-mb-60 mil-up">You may also like</h2>
+                <div class="row">
+                  <div class="col-12 col-lg-6 mil-mb-15 mil-up">
+                    <a href="/commercial-cleaning" class="mil-blog-card mil-br-lg">
+                      <div class="mil-cover">
+                        <img src="../img/blog/13.png" alt="cover" />
+                        <ul class="mil-category"></ul>
+                      </div>
+                      <div class="mil-descr mil-bg-m-3">
+                        <h5 class="mil-fs-28 mil-m-1 mil-up mil-mb-15 mil-lh-140">
+                          Commercial and
+                          <br class="mil-sm-hidden" />Industrial Cleaning
+                        </h5>
+                        <p class="mil-lh-180 mil-mb-30 mil-up">
+                          Specialized cleaning solutions tailored for offices,
+                          retail spaces, and business environments. Designed
+                          to maintain professional standards, support
+                          workplace hygiene, and enhance the daily experience
+                          for staff and visitors.
                         </p>
+
+                        <div class="mil-up">
+                          <div class="mil-btn mil-sm mil-bg-m-2-light mil-br-xl mil-hover-bri-105 mil-hover-scale">
+                            Read more
+                          </div>
+                        </div>
                       </div>
-                      <h2
-                        class="mil-fs-52 mil-m-3 mil-lh-110 mil-mb-40 mil-tac"
-                      >
-                        Want to learn more about our services?
-                      </h2>
-                      <div class="mil-buttons-frame">
-                        <a
-                          href="/security-services"
-                          class="mil-btn mil-icon-btn mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-hover-scale"
-                          >Our Services<i
-                            class="far fa-plus mil-bg-m-1 mil-a-1"
-                          ></i
-                        ></a>
+                    </a>
+                  </div>
+                  <div class="col-12 col-lg-6 mil-mb-15 mil-up">
+                    <a href="/carpet-upholstery-cleaning" class="mil-blog-card mil-br-lg">
+                      <div class="mil-cover">
+                        <img src="../img/blog/20.png" alt="cover" />
+                        <ul class="mil-category"></ul>
                       </div>
+                      <div class="mil-descr mil-bg-m-3">
+                        <h5 class="mil-fs-28 mil-m-1 mil-up mil-mb-15 mil-lh-140">
+                          Carpet & <br class="mil-sm-hidden" />
+                          Upholstery Cleaning
+                        </h5>
+
+                        <p class="mil-lh-180 mil-mb-30 mil-up">
+                          Specialized care for carpets, rugs, sofas, and
+                          fabric furnishings, removing embedded dust, stains,
+                          and odors while restoring freshness, texture, and
+                          comfort to interior spaces.
+                        </p>
+
+                        <div class="mil-up">
+                          <div class="mil-btn mil-sm mil-bg-m-2-light mil-br-xl mil-hover-bri-105 mil-hover-scale">
+                            Read more
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4">
+              <div class="mil-sidebar mil-mb-f">
+                <div class="mil-text-side mil-auto mil-mb-15 mil-up">
+                  <div class="mil-box-bg">
+                    <img src="../img/ui/t5.jpg" alt="bg" />
+                  </div>
+                  <div class="mil-text-frame mil-column mil-aic mil-w-100">
+                    <div class="mil-aic mil-mb-20">
+                      <p class="mil-tac">
+                        We clean objects of any <br />complexity and size in
+                        6-9 hours
+                      </p>
+                    </div>
+                    <h2 class="mil-fs-52 mil-m-3 mil-lh-110 mil-mb-40 mil-tac">
+                      Want to learn more about our services?
+                    </h2>
+                    <div class="mil-buttons-frame">
+                      <a href="/security-services"
+                        class="mil-btn mil-icon-btn mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-hover-scale">Our
+                        Services<i class="far fa-plus mil-bg-m-1 mil-a-1"></i></a>
                     </div>
                   </div>
-                  <div class="mil-sidebar-card mil-mb-15 mil-up">
-                    <h4 class="mil-mb-40 mil-fs-24">Categories</h4>
-                    <div class="mil-dots mil-mb-40"></div>
-                    <ul class="mil-categories">
-                      <!-- Cleaning Services -->
-                      <li>
-                        <a href="/#commercial"
-                          >Commercial Industrial Cleaning</a
-                        >
+                </div>
+                <div class="mil-sidebar-card mil-mb-15 mil-up">
+                  <h4 class="mil-mb-40 mil-fs-24">Categories</h4>
+                  <div class="mil-dots mil-mb-40"></div>
+                  <ul class="mil-categories">
+                    <!-- Cleaning Services -->
+                    <li>
+                      <a href="/#commercial">Commercial Industrial Cleaning</a>
+                    </li>
+                    <li>
+                      <a href="/#domestic">Domestic Cleaning</a>
+                    </li>
+                    <li>
+                      <a href="/#emergency">Emergency Cleaning</a>
+                    </li>
+                    <li>
+                      <a href="/#carpet">Carpet & Upholstery Cleaning</a>
+                    </li>
+                    <li><a href="/#window">Window Cleaning</a></li>
+                    <li>
+                      <a href="/#builders">Builders Cleaning</a>
+                    </li>
+                    <li>
+                      <a href="/#hygiene">Hygiene Cleaning</a>
+                    </li>
+                    <li>
+                      <a href="/#move-cleaning">Move In Move Out Cleaning</a>
+                    </li>
+                    <!-- Security Services -->
+                    <li>
+                      <a href="/#manned-guarding">Manned Guarding</a>
+                    </li>
+                    <li>
+                      <a href="/#mobile-patrol">Mobile Patrol Services</a>
+                    </li>
+                    <li>
+                      <a href="/#access-control">Access Control & Gate Security</a>
+                    </li>
+                    <li>
+                      <a href="/#cctv">CCTV Monitoring & Surveillance</a>
+                    </li>
+                    <li>
+                      <a href="/#alarm-response">Alarm Response Services</a>
+                    </li>
+                    <li>
+                      <a href="/#event-security">Event Security</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mil-sidebar-card mil-aic mil-mb-15 mil-jcb mil-bg-a-2 mil-up">
+                  <h5 class="mil-fs-24 mil-md-fs-32 mil-m-4 mil-mb-30 mil-md-mb-30">
+                    Get in touch
+                  </h5>
+                  <a href="/contact" class="mil-link mil-m-4 mil-mb-30">Contact us<i
+                      class="far fa-arrow-right mil-bg-a-1 mil-m-1"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- blog end -->
+
+      <!-- footer -->
+      <footer>
+        <div class="mil-footer-content">
+          <div class="container">
+            <div class="row mil-p-f-60">
+              <div class="col-lg-7 col-md-6 col-sm-12 mil-mb-5">
+                <div class="row">
+                  <div class="col-8 col-md-6">
+                    <a href="#top" class="mil-logo mil-hover-bri-105 mil-mb-15" style="width: 20rem">
+                      <img src="../img/ui/logoWhite.png" alt="logo" class="mil-light" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 col-md-6 col-sm-12 mil-mb-5">
+                <div class="row">
+                  <div class="col-5">
+                    <ul>
+                      <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up">
+                        <a href="/">Home</a>
                       </li>
-                      <li>
-                        <a href="/#domestic">Domestic Cleaning</a>
+                      <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up">
+                        <a href="/cleaning-services">Cleaning services</a>
                       </li>
-                      <li>
-                        <a href="/#emergency">Emergency Cleaning</a>
+                      <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up">
+                        <a href="/solar-cleaning">Solar cleaning</a>
                       </li>
-                      <li>
-                        <a href="/#carpet">Carpet & Upholstery Cleaning</a>
+                      <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up">
+                        <a href="/security-services">Security services</a>
                       </li>
-                      <li><a href="/#window">Window Cleaning</a></li>
-                      <li>
-                        <a href="/#builders">Builders Cleaning</a>
+                      <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up">
+                        <a href="/about-us">About Us</a>
                       </li>
-                      <li>
-                        <a href="/#hygiene">Hygiene Cleaning</a>
-                      </li>
-                      <li>
-                        <a href="/#move-cleaning">Move In Move Out Cleaning</a>
-                      </li>
-                      <!-- Security Services -->
-                      <li>
-                        <a href="/#manned-guarding">Manned Guarding</a>
-                      </li>
-                      <li>
-                        <a href="/#mobile-patrol">Mobile Patrol Services</a>
-                      </li>
-                      <li>
-                        <a href="/#access-control"
-                          >Access Control & Gate Security</a
-                        >
-                      </li>
-                      <li>
-                        <a href="/#cctv">CCTV Monitoring & Surveillance</a>
-                      </li>
-                      <li>
-                        <a href="/#alarm-response">Alarm Response Services</a>
-                      </li>
-                      <li>
-                        <a href="/#event-security">Event Security</a>
+                      <li class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up">
+                        <a href="/contact">Contact</a>
                       </li>
                     </ul>
                   </div>
 
-                  <div
-                    class="mil-sidebar-card mil-aic mil-mb-15 mil-jcb mil-bg-a-2 mil-up"
-                  >
-                    <h5
-                      class="mil-fs-24 mil-md-fs-32 mil-m-4 mil-mb-30 mil-md-mb-30"
-                    >
-                      Get in touch
-                    </h5>
-                    <a href="/contact" class="mil-link mil-m-4 mil-mb-30"
-                      >Contact us<i
-                        class="far fa-arrow-right mil-bg-a-1 mil-m-1"
-                      ></i
-                    ></a>
+                  <div class="col-7">
+                    <ul>
+                      <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
+                        <a href="">Services</a>
+                      </li>
+                      <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
+                        <a href="/#commercial">Commercial Cleaning </a>
+                      </li>
+                      <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
+                        <a href="/#emergency">Emergency Cleaning</a>
+                      </li>
+                      <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
+                        <a href="/#cctv">CCTV Monitoring & Surveillance</a>
+                      </li>
+                      <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
+                        <a href="/#event-security">Event Security</a>
+                      </li>
+                      <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
+                        <a href="/solar-cleaning">Ground-Mounted Solar Panel Cleaning</a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- blog end -->
-
-        <!-- footer -->
-        <footer>
-          <div class="mil-footer-content">
-            <div class="container">
-              <div class="row mil-p-f-60">
-                <div class="col-lg-7 col-md-6 col-sm-12 mil-mb-5">
-                  <div class="row">
-                    <div class="col-8 col-md-6">
-                      <a
-                        href="#top"
-                        class="mil-logo mil-hover-bri-105 mil-mb-15"
-                        style="width: 20rem"
-                      >
-                        <img
-                          src="../img/ui/logoWhite.png"
-                          alt="logo"
-                          class="mil-light"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-5 col-md-6 col-sm-12 mil-mb-5">
-                  <div class="row">
-                    <div class="col-5">
-                      <ul>
-                        <li
-                          class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"
-                        >
-                          <a href="/">Home</a>
-                        </li>
-                        <li
-                          class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"
-                        >
-                          <a href="/cleaning-services">Cleaning services</a>
-                        </li>
-                        <li
-                          class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"
-                        >
-                          <a href="/solar-cleaning">Solar cleaning</a>
-                        </li>
-                        <li
-                          class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"
-                        >
-                          <a href="/security-services">Security services</a>
-                        </li>
-                        <li
-                          class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"
-                        >
-                          <a href="/about-us">About Us</a>
-                        </li>
-                        <li
-                          class="mil-fs-24 mil-fw-600 mil-m-3 mil-hover-a-1 mil-mb-20 mil-up"
-                        >
-                          <a href="/contact">Contact</a>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div class="col-7">
-                      <ul>
-                        <li
-                          class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up"
-                        >
-                          <a href="/#commercial">Commercial Cleaning </a>
-                        </li>
-                        <li
-                          class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up"
-                        >
-                          <a href="/#residential">Domestic Cleaning</a>
-                        </li>
-                        <li
-                          class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up"
-                        >
-                          <a href="/#emergency">Emergency Cleaning</a>
-                        </li>
-                        <li
-                          class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up"
-                        >
-                          <a href="/#manned-guarding">Manned Guarding</a>
-                        </li>
-                        <li
-                          class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up"
-                        >
-                          <a href="/#mobile-patrol">Mobile Patrol Services</a>
-                        </li>
-                        <li
-                          class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up"
-                        >
-                          <a href="/#access-control"
-                            >Access Control & Gate Security</a
-                          >
-                        </li>
-                        <!-- <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
-                                                                <a href="#carpet">Carpet &
-                                                                    Upholstery Cleaning</a>
-                                                            </li>
-                                                            <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
-                                                                <a href="#window">Window
-                                                                    Cleaning</a>
-                                                            </li>
-                                                            <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
-                                                                <a href="#floor">Floor
-                                                                    Care</a>
-                                                            </li> -->
-                      </ul>
-                    </div>
-                    <!-- <div class="col-4">
-                                                        <ul>
-                                                            <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
-                                                                <a href="#manned">Manned
-                                                                    Guarding</a>
-                                                            </li>
-                                                            <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
-                                                                <a href="#mobile-patrol">Mobile Patrol Services</a>
-                                                            </li>
-                                                            <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
-                                                                <a href="#access-control">Access Control & Gate Security</a>
-                                                            </li>
-                                                            <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
-                                                                <a href="#cctv">CCTV Monitoring & Surveillance</a>
-                                                            </li>
-                                                            <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
-                                                                <a href="alarm-response">Alarm Response Services</a>
-                                                            </li>
-                                                            <li class="mil-fs-22 mil-lg-fs-2 mil-hover-m-4 mil-mb-20 mil-up">
-                                                                <a href="#event-security">Event Security</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div> -->
+            <div class="mil-dots"></div>
+            <div class="row mil-p-f-5 mil-sm-column-r">
+              <div class="col-lg-7 col-md-6 col-sm-12 mil-column mil-jcb mil-mb-30">
+                <ul class="mil-aic mil-mb-30">
+                  <li class="mil-mr-20 mil-fs-20 mil-m-3">
+                    <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li class="mil-mr-20 mil-fs-20 mil-m-3">
+                    <a href="#." target="_blank" data-no-swup class="mil-hover-a-1">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="mil-aic">
+                  <li class="mil-hover-m-4 mil-mr-20">
+                    <a href="">Privacy Policy</a>
+                    <!-- <a href="/contact">Privacy Policy</a> -->
+                  </li>
+                  <li class="mil-hover-m-4 mil-mr-20">
+                    <a href="">Terms and conditions</a>
+                    <!-- <a href="/contact">Terms and conditions</a> -->
+                  </li>
+                  <li class="mil-hover-m-4 mil-mr-20">
+                    <a href="">Cookie Policy</a>
+                    <!-- <a href="/contact">Cookie Policy</a> -->
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-5 col-md-6 col-sm-12 mil-mb-30">
+                <div class="row mil-jcb">
+                  <div class="col-6"></div>
+                  <div class="col-6">
+                    <h5 class="mil-fs-22 mil-fw-600 mil-m-3 mil-mb-20">
+                      Mauritius
+                    </h5>
+                    <p class="mil-mb-20">
+                      239 Palma Road, <br />Quatre Bornes
+                    </p>
+                    <p class="mil-up-text mil-a-1">+230 57057240</p>
                   </div>
                 </div>
               </div>
-              <div class="mil-dots"></div>
-              <div class="row mil-p-f-5 mil-sm-column-r">
-                <div
-                  class="col-lg-7 col-md-6 col-sm-12 mil-column mil-jcb mil-mb-30"
-                >
-                  <ul class="mil-aic mil-mb-30">
-                    <li class="mil-mr-20 mil-fs-20 mil-m-3">
-                      <a
-                        href="#."
-                        target="_blank"
-                        data-no-swup
-                        class="mil-hover-a-1"
-                      >
-                        <i class="fab fa-instagram"></i>
-                      </a>
-                    </li>
-                    <li class="mil-mr-20 mil-fs-20 mil-m-3">
-                      <a
-                        href="#."
-                        target="_blank"
-                        data-no-swup
-                        class="mil-hover-a-1"
-                      >
-                        <i class="fab fa-facebook-f"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <ul class="mil-aic">
-                    <li class="mil-hover-m-4 mil-mr-20">
-                      <a href="">Privacy Policy</a>
-                      <!-- <a href="/contact">Privacy Policy</a> -->
-                    </li>
-                    <li class="mil-hover-m-4 mil-mr-20">
-                      <a href="">Terms and conditions</a>
-                      <!-- <a href="/contact">Terms and conditions</a> -->
-                    </li>
-                    <li class="mil-hover-m-4 mil-mr-20">
-                      <a href="">Cookie Policy</a>
-                      <!-- <a href="/contact">Cookie Policy</a> -->
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-5 col-md-6 col-sm-12 mil-mb-30">
-                  <div class="row mil-jcb">
-                    <div class="col-6"></div>
-                    <div class="col-6">
-                      <h5 class="mil-fs-22 mil-fw-600 mil-m-3 mil-mb-20">
-                        Mauritius
-                      </h5>
-                      <p class="mil-mb-20">
-                        239 Palma Road, <br />Quatre Bornes
-                      </p>
-                      <p class="mil-up-text mil-a-1">+230 57057240</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- <div class="mil-dots mil-up"></div> -->
-              <!-- <div class="mil-footer-bottom mil-aic mil-jcb mil-up">
+            </div>
+            <!-- <div class="mil-dots mil-up"></div> -->
+            <!-- <div class="mil-footer-bottom mil-aic mil-jcb mil-up">
                               <p>© Copyright 2023 - Mil. All Rights Reserved.</p>
                               <p>
                                 Author:
@@ -786,36 +586,37 @@
                                   class="mil-text-link mil-a-1">Nazar Miller</a>
                               </p>
                             </div> -->
-            </div>
           </div>
-        </footer>
-        <!-- footer end -->
-      </div>
-      <!-- dynamic content end -->
+        </div>
+      </footer>
+      <!-- footer end -->
     </div>
-    <!-- page wrapper end -->
-    <!-- Toast Notification -->
-    <div id="toast" class="toast"></div>
+    <!-- dynamic content end -->
+  </div>
+  <!-- page wrapper end -->
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
 
-    <!-- swup js -->
-    <script src=" ../js/plugins/swup.min.js"></script>
-    <!-- swup body class plugin -->
-    <script src="../js/plugins/SwupBodyClassPlugin.min.js"></script>
-    <!-- gsap js -->
-    <script src="../js/plugins/gsap.js"></script>
-    <!-- scroll trigger js -->
-    <script src="../js/plugins/scroll-trigger.js"></script>
-    <!-- lenis js -->
-    <script src="../js/plugins/lenis.js"></script>
-    <!-- cleave js -->
-    <script src="../js/plugins/cleave.js"></script>
-    <!-- swiper js -->
-    <script src="../js/plugins/swiper.min.js"></script>
-    <!-- fancybox js -->
-    <script src="../js/plugins/fancybox.js"></script>
-    <!-- calculator js -->
-    <script src="../js/plugins/calculator.js"></script>
-    <!-- main js -->
-    <script src="../js/main.js"></script>
-  </body>
+  <!-- swup js -->
+  <script src=" ../js/plugins/swup.min.js"></script>
+  <!-- swup body class plugin -->
+  <script src="../js/plugins/SwupBodyClassPlugin.min.js"></script>
+  <!-- gsap js -->
+  <script src="../js/plugins/gsap.js"></script>
+  <!-- scroll trigger js -->
+  <script src="../js/plugins/scroll-trigger.js"></script>
+  <!-- lenis js -->
+  <script src="../js/plugins/lenis.js"></script>
+  <!-- cleave js -->
+  <script src="../js/plugins/cleave.js"></script>
+  <!-- swiper js -->
+  <script src="../js/plugins/swiper.min.js"></script>
+  <!-- fancybox js -->
+  <script src="../js/plugins/fancybox.js"></script>
+  <!-- calculator js -->
+  <script src="../js/plugins/calculator.js"></script>
+  <!-- main js -->
+  <script src="../js/main.js"></script>
+</body>
+
 </html>
