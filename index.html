@@ -1851,6 +1851,78 @@
     <div id="toast" class="toast"></div>
     <!-- page wrapper end -->
 
+    <!-- 🎈 Realistic Balloon Overlay -->
+    <div id="balloon-overlay"></div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+      const balloonColors = [
+        "#e63946",
+        "#f1c40f",
+        "#2ecc71",
+        "#3498db",
+        "#9b5de5",
+        "#ff7a18",
+      ];
+
+      function launchBalloon() {
+        const wrap = document.createElement("div");
+        wrap.className = "balloon-wrap";
+
+        const balloon = document.createElement("div");
+        balloon.className = "balloon";
+
+        const size = Math.random() * 20 + 60;
+        balloon.style.width = size + "px";
+        balloon.style.height = size * 1.25 + "px";
+
+        balloon.style.backgroundColor =
+          balloonColors[Math.floor(Math.random() * balloonColors.length)];
+
+        wrap.style.left = Math.random() * 90 + "vw";
+
+        const duration = Math.random() * 6 + 8;
+        wrap.style.animationDuration = duration + "s";
+
+        wrap.appendChild(balloon);
+        document.getElementById("balloon-overlay").appendChild(wrap);
+
+        setTimeout(() => wrap.remove(), duration * 1000);
+      }
+
+      for (let i = 0; i < 18; i++) {
+        setTimeout(launchBalloon, i * 350);
+      }
+    </script>
+    <script>
+      function fireCracker(x, delay = 0) {
+        setTimeout(() => {
+          confetti({
+            particleCount: 90,
+            angle: 90,
+            spread: 55,
+            startVelocity: 55,
+            gravity: 1.2,
+            scalar: 0.9,
+            ticks: 200,
+            origin: { x: x, y: 0.1 },
+            colors: [
+              "#405f99", // brand blue
+              "#f6d62d", // accent yellow
+              "#ffffff",
+            ],
+          });
+        }, delay);
+      }
+
+      // 🎆 Firecracker sequence
+      setTimeout(() => {
+        fireCracker(0.15, 0); // left
+        fireCracker(0.85, 300); // right
+        fireCracker(0.5, 600); // center
+      }, 800);
+    </script>
+
     <!-- swup js -->
     <script src=" js/plugins/swup.min.js"></script>
     <!-- swup body class plugin -->

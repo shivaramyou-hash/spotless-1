@@ -6031,3 +6031,63 @@ pagination
     display: none !important;
   }
 }
+
+/* 🎈 Overlay */
+#balloon-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: visible;
+}
+
+/* 🎈 Balloon wrapper (vertical movement) */
+.balloon-wrap {
+  position: fixed;
+  bottom: -200px;
+  animation: rise linear forwards;
+}
+
+/* 🎈 Balloon body (sway only) */
+.balloon {
+  border-radius: 50% 50% 48% 48%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.85),
+    transparent 40%
+  );
+  animation: sway 3s ease-in-out infinite;
+}
+
+/* 🎈 String */
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.25);
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+}
+
+/* 🎈 Vertical rise */
+@keyframes rise {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-150vh);
+  }
+}
+
+/* 🎈 Natural sway */
+@keyframes sway {
+  0%,
+  100% {
+    transform: translateX(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(18px) rotate(3deg);
+  }
+}
