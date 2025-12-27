@@ -1070,6 +1070,12 @@ margins
 .mil-pl-15 {
   margin-left: 1.5rem;
 }
+.mil-pl-20 {
+  margin-left: 2rem;
+}
+.mil-pl-60 {
+  margin-left: 7rem !important;
+}
 
 .mil-ml-0 {
   margin-left: 0;
