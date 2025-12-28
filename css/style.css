@@ -6037,3 +6037,16 @@ pagination
     display: none !important;
   }
 }
+.mil-fullscreen-img {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mil-img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* IMPORTANT */
+  object-position: center;
+  display: block;
+}
