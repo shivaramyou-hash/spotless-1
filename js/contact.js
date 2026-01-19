@@ -48,6 +48,23 @@ async function handleSubmit(e) {
   const submitBtn = e.target.querySelector("button[type='submit']");
   submitBtn.classList.add("loading");
 
+  // 🟢 Wake up DB/functions
+  try {
+    await fetch(
+      "https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({}),
+      }
+    );
+  } catch (err) {
+    console.warn("Keep-alive trigger failed, proceeding anyway", err);
+  }
+
   const { error } = await supabaseClient.from("contact_form").insert([
     {
       name,
@@ -111,6 +128,23 @@ async function handleCallbackSubmit(e) {
 
   // ✅ ADD SAME LOADING ANIMATION
   submitBtn.classList.add("loading");
+
+  // 🟢 Wake up DB/functions
+  try {
+    await fetch(
+      "https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({}),
+      }
+    );
+  } catch (err) {
+    console.warn("Keep-alive trigger failed, proceeding anyway", err);
+  }
 
   const { error } = await supabaseClient.from("call_back").insert([
     {
