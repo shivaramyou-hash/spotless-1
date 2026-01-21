@@ -765,12 +765,12 @@ a.item-link {
 }
 
 .singleblog-section .buttons .prev {
-  background-image: url(../images/single-blog-prev-image.png);
+  background-image: url(../images/single-blog-prev-image.webp);
   left: 0px;
 }
 
 .singleblog-section .buttons .next {
-  background-image: url(../images/single-blog-next-image.png);
+  background-image: url(../images/single-blog-next-image.webp);
   right: 0;
 }
 
@@ -779,11 +779,11 @@ a.item-link {
   color: var(--e-global-color-accent);
 }
 .singleblog-section .buttons .prev:hover {
-  background-image: url(../images/single-blog-prev-imagehover.png);
+  background-image: url(../images/single-blog-prev-imagehover.webp);
 }
 
 .singleblog-section .buttons .next:hover {
-  background-image: url(../images/single-blog-next-imagehover.png);
+  background-image: url(../images/single-blog-next-imagehover.webp);
 }
 
 .singleblog-section .content4 .icon {
