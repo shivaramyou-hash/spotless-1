@@ -33,6 +33,42 @@
   <script src="../js/contact.js"></script>
   <!-- page title -->
   <title>Hygiene Cleaning | Spotless Mauritius</title>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Spotless Mauritius",
+      "url": "https://spotlessmauritius.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://spotlessmauritius.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": [
+        "Home",
+        "Cleaning Services",
+        "Solar Cleaning",
+        "Security Services",
+        "About Us",
+        "Contact Us"
+      ],
+      "url": [
+        "https://spotlessmauritius.com/",
+        "https://spotlessmauritius.com/cleaning-services",
+        "https://spotlessmauritius.com/solar-cleaning",
+        "https://spotlessmauritius.com/security-services",
+        "https://spotlessmauritius.com/about-us",
+        "https://spotlessmauritius.com/contact"
+      ]
+    }
+  </script>
 </head>
 
 <body>
@@ -64,20 +100,21 @@
               <li class="">
                 <a href="/">Home</a>
               </li>
-              <li class="">
-                <a href="/cleaning-services">CLEANING
-                  <br />
-                  SERVICES</a>
+              <li class="mil-current">
+                <a href="/cleaning-services">CLEANING<br />SERVICES</a>
               </li>
               <li class="">
-                <a href="/solar-cleaning">SOLAR<br />
-                  CLEANING</a>
+                <a href="/solar-cleaning">SOLAR<br />CLEANING</a>
               </li>
               <li class="">
-                <a href="/security-services">SECURITY<br />
-                  SERVICES</a>
+                <a href="/security-services">SECURITY<br />SERVICES</a>
               </li>
-              <li class=""><a href="/about-us">ABOUT US </a></li>
+              <li class="">
+                <a href="/about-us">ABOUT US </a>
+              </li>
+              <li class="mobile-only ">
+                <a href="/contact">Contact US </a>
+              </li>
             </ul>
           </nav>
           <div class="mil-right mil-jce">
