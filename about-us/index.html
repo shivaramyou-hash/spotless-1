@@ -56,12 +56,11 @@
   <!-- THEME COLOR -->
   <meta name="theme-color" content="#ffc169" />
 
-  <!-- FAVICON -->
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/img/ui/favicon.webp" type="image/png" />
-  <link rel="apple-touch-icon" href="/img/ui/logo2.webp" />
+      <!-- FAVICON -->
+  <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/img/ui/favicon.png" />
 
-  <!-- CSS -->
+<!-- CSS -->
   <link rel="stylesheet" href="../css/plugins/bootstrap-grid.css" />
   <link rel="stylesheet" href="../css/plugins/swiper.css" />
   <link rel="stylesheet" href="../css/plugins/fancybox.css" />
@@ -72,6 +71,42 @@
   <!-- JS (SAFE IN HEAD) -->
   <script src="https://unpkg.com/@supabase/supabase-js@2" defer></script>
   <script src="../js/contact.js" defer></script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Spotless Mauritius",
+      "url": "https://spotlessmauritius.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://spotlessmauritius.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": [
+        "Home",
+        "Cleaning Services",
+        "Solar Cleaning",
+        "Security Services",
+        "About Us",
+        "Contact Us"
+      ],
+      "url": [
+        "https://spotlessmauritius.com/",
+        "https://spotlessmauritius.com/cleaning-services",
+        "https://spotlessmauritius.com/solar-cleaning",
+        "https://spotlessmauritius.com/security-services",
+        "https://spotlessmauritius.com/about-us",
+        "https://spotlessmauritius.com/contact"
+      ]
+    }
+  </script>
 </head>
 
 <body>
@@ -101,26 +136,22 @@
           </div>
           <nav class="mil-main-menu">
             <ul id="swupMenu" class="mil-menu-transition mil-aic mil-m-4">
-              <li>
-                <a class="mil-fs-18" href="/">Home</a>
+              <li class="">
+                <a href="/">Home</a>
               </li>
               <li class="">
-                <a href="/cleaning-services">CLEANING
-                  <br />
-                  SERVICES</a>
+                <a href="/cleaning-services">CLEANING<br />SERVICES</a>
               </li>
               <li class="">
-                <a href="/solar-cleaning">SOLAR<br />
-                  CLEANING</a>
+                <a href="/solar-cleaning">SOLAR<br />CLEANING</a>
               </li>
               <li class="">
-                <a href="/security-services">SECURITY<br />
-                  SERVICES</a>
+                <a href="/security-services">SECURITY<br />SERVICES</a>
               </li>
               <li class="mil-current">
                 <a href="/about-us">ABOUT US </a>
               </li>
-              <li class="mobile-only">
+              <li class="mobile-only ">
                 <a href="/contact">Contact US </a>
               </li>
             </ul>
