@@ -17,6 +17,43 @@ window.supabaseClient = supabaseClient;
 console.log("Supabase initialized ✅");
 
 // ================================
+// AUTO-FILL FROM URL PARAMS
+// ================================
+function autoFillFromQueryParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  const fields = {
+    'user-name': document.getElementById('user-name'),
+    'user-email': document.getElementById('user-email'),
+    'user-tel': document.getElementById('user-phone'),
+    'message': document.getElementById('message')
+  };
+
+  // Fill text fields
+  for (const [key, element] of Object.entries(fields)) {
+    if (element && urlParams.has(key)) {
+      element.value = urlParams.get(key);
+    }
+  }
+
+  // Fill service selection (Custom Radio Dropdown)
+  if (urlParams.has('select')) {
+    const serviceValue = urlParams.get('select');
+    const radio = document.querySelector(`input[name="select"][value="${serviceValue}"]`);
+    if (radio) {
+      radio.checked = true;
+      // Also update the UI span for the custom dropdown
+      const selectedValueSpan = document.querySelector('.mil-selected-value');
+      if (selectedValueSpan) {
+          selectedValueSpan.textContent = serviceValue;
+      }
+    }
+  }
+  
+  console.log("Form auto-filled from URL parameters ✅");
+}
+
+// ================================
 // ROBOT CHECK LOGIC (MODAL VERSION)
 // ================================
 let isVerified = false;
@@ -100,12 +137,10 @@ async function handleSubmit(e) {
   }
 
   if (!isVerified) {
-    // Show modal instead of submitting
     openModal();
     return;
   }
 
-  // If already verified (unlikely flow but safe), just perform submission
   performActualSubmission(e.target);
 }
 
@@ -121,19 +156,16 @@ async function performActualSubmission(formElement) {
   const submitBtn = formElement.querySelector("button[type='submit']");
   submitBtn.classList.add("loading");
 
-  // 🟢 Wake up DB/functions
+  // Wake up DB
   try {
-    await fetch(
-      "https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify({}),
-      }
-    );
+    await fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({}),
+    });
   } catch (err) {
     console.warn("Keep-alive trigger failed", err);
   }
@@ -150,27 +182,26 @@ async function performActualSubmission(formElement) {
 
   if (!error) {
     showToast("✅ Request submitted successfully!", "success");
-    // 🔔 Notify
-    fetch(
-      "https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/send-contact-notification",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify({
-          type: "contact",
-          name,
-          email,
-          phone,
-          services,
-          message,
-        }),
-      }
-    );
+    fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/send-contact-notification", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({
+        type: "contact",
+        name,
+        email,
+        phone,
+        services,
+        message,
+      }),
+    });
     formElement.reset();
     resetRobotCheck();
+    // Reset custom select display
+    const selectedValueSpan = document.querySelector('.mil-selected-value');
+    if (selectedValueSpan) selectedValueSpan.textContent = "Services";
   } else {
     console.error(error);
     showToast("Failed to submit request", "error");
@@ -196,21 +227,18 @@ async function handleCallbackSubmit(e) {
   const submitBtn = e.target.querySelector("button[type='submit']");
   submitBtn.classList.add("loading");
 
-  // 🟢 Wake up DB/functions
+  // Wake up DB
   try {
-    await fetch(
-      "https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify({}),
-      }
-    );
+    await fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({}),
+    });
   } catch (err) {
-    console.warn("Keep-alive trigger failed, proceeding anyway", err);
+      console.warn("Keep-alive trigger failed", err);
   }
 
   const { error } = await supabaseClient.from("call_back").insert([
@@ -222,21 +250,18 @@ async function handleCallbackSubmit(e) {
 
   if (!error) {
     showToast("📞 We will call you back shortly!", "success");
-    fetch(
-      "https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/send-contact-notification",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify({
-          type: "callback",
-          name,
-          phone,
-        }),
-      }
-    );
+    fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/send-contact-notification", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({
+        type: "callback",
+        name,
+        phone,
+      }),
+    });
     e.target.reset();
   } else {
     console.error(error);
@@ -264,6 +289,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Robot Check
   initRobotCheck();
+
+  // Auto-fill from URL
+  autoFillFromQueryParams();
 });
 
 // ================================
@@ -271,16 +299,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // ================================
 function showToast(message, type = "success") {
   let toast = document.getElementById("toast");
-  
   if (!toast) {
       toast = document.createElement("div");
       toast.id = "toast";
       document.body.appendChild(toast);
   }
-
   toast.textContent = message;
   toast.className = `toast ${type} show`;
-
   setTimeout(() => {
     toast.classList.remove("show");
   }, 3000);
