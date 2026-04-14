@@ -36,21 +36,24 @@ function autoFillFromQueryParams() {
     }
   }
 
-  // Fill service selection (Custom Radio Dropdown)
+  // Fill service selection
   if (urlParams.has('select')) {
     const serviceValue = urlParams.get('select');
     const radio = document.querySelector(`input[name="select"][value="${serviceValue}"]`);
     if (radio) {
       radio.checked = true;
-      // Also update the UI span for the custom dropdown
       const selectedValueSpan = document.querySelector('.mil-selected-value');
       if (selectedValueSpan) {
           selectedValueSpan.textContent = serviceValue;
       }
     }
   }
-  
-  console.log("Form auto-filled from URL parameters ✅");
+
+  // IMPORTANT: Clean the URL immediately after filling to prevent state issues 
+  if (window.location.search) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+      console.log("URL parameters cleared ✅");
+  }
 }
 
 // ================================
@@ -65,41 +68,28 @@ function initRobotCheck() {
 
   if (!robotCheckbox || !modal) return;
 
-  // Click on checkbox
-  robotCheckbox.addEventListener("click", async () => {
+  robotCheckbox.addEventListener("click", async (e) => {
+    e.preventDefault(); // Extra safeguard
     if (isVerified) return;
 
     robotCheckbox.classList.add("loading");
-    
-    // Simulate verification delay
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     robotCheckbox.classList.remove("loading");
     robotCheckbox.classList.add("verified");
     isVerified = true;
     
-    console.log("User verified as human ✅");
-
-    // After brief delay, close modal and submit form
     setTimeout(() => {
         closeModal();
-        const contactForm = document.querySelector(".mil-hero-form-frame form");
+        const contactForm = document.getElementById("contact-form-element");
         if (contactForm) {
-            // Trigger actual submission logic
             performActualSubmission(contactForm);
         }
     }, 800);
   });
 
-  // Close modal logic
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeModal);
-  }
-
-  // Close on outside click
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-  });
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 }
 
 function openModal() {
@@ -124,7 +114,11 @@ function resetRobotCheck() {
 // SUBMIT HANDLER
 // ================================
 async function handleSubmit(e) {
-  e.preventDefault();
+  // CRITICAL: Prevent ANY default browser action immediately
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
 
   const name = document.getElementById("user-name").value.trim();
   const email = document.getElementById("user-email").value.trim();
@@ -133,18 +127,18 @@ async function handleSubmit(e) {
 
   if (!name || !email || !message) {
     showToast("Please fill all required fields", "error");
-    return;
+    return false; // Stop form
   }
 
   if (!isVerified) {
     openModal();
-    return;
+    return false; // Stop form
   }
 
   performActualSubmission(e.target);
+  return false; // Final safeguard
 }
 
-// Split logic to allow triggering from modal
 async function performActualSubmission(formElement) {
   const name = document.getElementById("user-name").value.trim();
   const email = document.getElementById("user-email").value.trim();
@@ -154,9 +148,8 @@ async function performActualSubmission(formElement) {
   const services = serviceInput ? serviceInput.value : null;
 
   const submitBtn = formElement.querySelector("button[type='submit']");
-  submitBtn.classList.add("loading");
+  if (submitBtn) submitBtn.classList.add("loading");
 
-  // Wake up DB
   try {
     await fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive", {
       method: "POST",
@@ -166,18 +159,10 @@ async function performActualSubmission(formElement) {
       },
       body: JSON.stringify({}),
     });
-  } catch (err) {
-    console.warn("Keep-alive trigger failed", err);
-  }
+  } catch (err) {}
 
   const { error } = await supabaseClient.from("contact_form").insert([
-    {
-      name,
-      email,
-      phone,
-      services,
-      message,
-    },
+    { name, email, phone, services, message },
   ]);
 
   if (!error) {
@@ -188,33 +173,24 @@ async function performActualSubmission(formElement) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
       },
-      body: JSON.stringify({
-        type: "contact",
-        name,
-        email,
-        phone,
-        services,
-        message,
-      }),
+      body: JSON.stringify({ type: "contact", name, email, phone, services, message }),
     });
     formElement.reset();
     resetRobotCheck();
-    // Reset custom select display
     const selectedValueSpan = document.querySelector('.mil-selected-value');
     if (selectedValueSpan) selectedValueSpan.textContent = "Services";
   } else {
-    console.error(error);
     showToast("Failed to submit request", "error");
   }
 
-  submitBtn.classList.remove("loading");
+  if (submitBtn) submitBtn.classList.remove("loading");
 }
 
 // ================================
 // CALLBACK FORM HANDLER
 // ================================
 async function handleCallbackSubmit(e) {
-  e.preventDefault();
+  if (e) e.preventDefault();
 
   const name = document.getElementById("user-name-2").value.trim();
   const phone = document.getElementById("user-phone-2").value.trim();
@@ -225,9 +201,8 @@ async function handleCallbackSubmit(e) {
   }
 
   const submitBtn = e.target.querySelector("button[type='submit']");
-  submitBtn.classList.add("loading");
-
-  // Wake up DB
+  if (submitBtn) submitBtn.classList.add("loading");
+ // Wake up DB
   try {
     await fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive", {
       method: "POST",
@@ -240,13 +215,8 @@ async function handleCallbackSubmit(e) {
   } catch (err) {
       console.warn("Keep-alive trigger failed", err);
   }
-
-  const { error } = await supabaseClient.from("call_back").insert([
-    {
-      name,
-      phone,
-    },
-  ]);
+  
+  const { error } = await supabaseClient.from("call_back").insert([{ name, phone }]);
 
   if (!error) {
     showToast("📞 We will call you back shortly!", "success");
@@ -256,57 +226,47 @@ async function handleCallbackSubmit(e) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
       },
-      body: JSON.stringify({
-        type: "callback",
-        name,
-        phone,
-      }),
+      body: JSON.stringify({ type: "callback", name, phone }),
     });
     e.target.reset();
-  } else {
-    console.error(error);
-    showToast("Failed to submit callback request", "error");
   }
 
-  submitBtn.classList.remove("loading");
+  if (submitBtn) submitBtn.classList.remove("loading");
 }
 
 // ================================
-// DOM READY
+// DOM READY & INITIALIZATION
 // ================================
-document.addEventListener("DOMContentLoaded", () => {
-  // Contact form
-  const contactForm = document.querySelector(".mil-hero-form-frame form");
+function init() {
+  console.log("Initializing contact scripts...");
+
+  const contactForm = document.getElementById("contact-form-element");
   if (contactForm) {
     contactForm.addEventListener("submit", handleSubmit);
+    // Extra safeguard: inline handler override
+    contactForm.onsubmit = (e) => {
+        handleSubmit(e);
+        return false; 
+    };
   }
 
-  // Callback form
   const callbackForm = document.getElementById("callbackForm");
   if (callbackForm) {
     callbackForm.addEventListener("submit", handleCallbackSubmit);
+    callbackForm.onsubmit = (e) => {
+        handleCallbackSubmit(e);
+        return false;
+    };
   }
 
-  // Robot Check
   initRobotCheck();
-
-  // Auto-fill from URL
   autoFillFromQueryParams();
-});
-
-// ================================
-// TOAST FUNCTION
-// ================================
-function showToast(message, type = "success") {
-  let toast = document.getElementById("toast");
-  if (!toast) {
-      toast = document.createElement("div");
-      toast.id = "toast";
-      document.body.appendChild(toast);
-  }
-  toast.textContent = message;
-  toast.className = `toast ${type} show`;
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 3000);
 }
+
+// Handle both normal load and Swup transitions
+document.addEventListener("DOMContentLoaded", init);
+if (window.swup) {
+    document.addEventListener("swup:contentReplaced", init);
+}
+// Final fallback for swup versions
+document.addEventListener("swup:pageView", init);
