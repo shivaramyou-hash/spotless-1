@@ -57,7 +57,7 @@ function autoFillFromQueryParams() {
 // ROBOT CHECK LOGIC (MODAL VERSION)
 // ================================
 let isVerified = false;
-let isSubmitting = false; // Flag to prevent double submission
+let isSubmitting = false;
 
 function initRobotCheck() {
   const robotCheckbox = document.getElementById("robot-checkbox");
@@ -66,19 +66,19 @@ function initRobotCheck() {
 
   if (!robotCheckbox || !modal) return;
 
-  // Clear existing listeners to prevent duplicates
-  const newCheckbox = robotCheckbox.cloneNode(true);
-  robotCheckbox.parentNode.replaceChild(newCheckbox, robotCheckbox);
+  // Use a named function so we can remove it if needed, or just check a flag to avoid multiple listeners
+  if (robotCheckbox.dataset.hasListener) return;
+  robotCheckbox.dataset.hasListener = "true";
 
-  newCheckbox.addEventListener("click", async (e) => {
+  robotCheckbox.addEventListener("click", async (e) => {
     e.preventDefault();
     if (isVerified) return;
 
-    newCheckbox.classList.add("loading");
+    robotCheckbox.classList.add("loading");
     await new Promise(resolve => setTimeout(resolve, 1500));
 
-    newCheckbox.classList.remove("loading");
-    newCheckbox.classList.add("verified");
+    robotCheckbox.classList.remove("loading");
+    robotCheckbox.classList.add("verified");
     isVerified = true;
     
     setTimeout(() => {
@@ -90,12 +90,7 @@ function initRobotCheck() {
     }, 800);
   });
 
-  if (closeBtn) {
-      const newCloseBtn = closeBtn.cloneNode(true);
-      closeBtn.parentNode.replaceChild(newCloseBtn, closeBtn);
-      newCloseBtn.addEventListener("click", closeModal);
-  }
-  
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
   modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 }
 
@@ -143,7 +138,7 @@ async function handleSubmit(e) {
     return false;
   }
 
-  performActualSubmission(e.target);
+  performActualSubmission(e.currentTarget); // use currentTarget to be safe
   return false;
 }
 
@@ -165,7 +160,7 @@ async function performActualSubmission(formElement) {
   }
 
   try {
-
+    // DB Wake up
     await fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive", {
       method: "POST",
       headers: {
@@ -173,7 +168,7 @@ async function performActualSubmission(formElement) {
         Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
       },
       body: JSON.stringify({}),
-    });
+    }).catch(() => {});
 
     const { error } = await supabaseClient.from("contact_form").insert([
       { name, email, phone, services, message },
@@ -182,7 +177,6 @@ async function performActualSubmission(formElement) {
     if (!error) {
       showToast("✅ Request submitted successfully!", "success");
       
-      // Notify edge function
       fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/send-contact-notification", {
         method: "POST",
         headers: {
@@ -225,7 +219,7 @@ async function handleCallbackSubmit(e) {
     return;
   }
 
-  const submitBtn = e.target.querySelector("button[type='submit']");
+  const submitBtn = e.currentTarget.querySelector("button[type='submit']");
   if (submitBtn) {
       submitBtn.classList.add("loading");
       submitBtn.disabled = true;
@@ -259,18 +253,15 @@ function init() {
   console.log("Initializing contact scripts...");
 
   const contactForm = document.getElementById("contact-form-element");
-  if (contactForm) {
-    // Remove old listeners by cloning (if re-initing via swup)
-    const newForm = contactForm.cloneNode(true);
-    contactForm.parentNode.replaceChild(newForm, contactForm);
-    newForm.addEventListener("submit", handleSubmit);
+  if (contactForm && !contactForm.dataset.hasListener) {
+    contactForm.dataset.hasListener = "true";
+    contactForm.addEventListener("submit", handleSubmit);
   }
 
   const callbackForm = document.getElementById("callbackForm");
-  if (callbackForm) {
-    const newCBForm = callbackForm.cloneNode(true);
-    callbackForm.parentNode.replaceChild(newCBForm, callbackForm);
-    newCBForm.addEventListener("submit", handleCallbackSubmit);
+  if (callbackForm && !callbackForm.dataset.hasListener) {
+    callbackForm.dataset.hasListener = "true";
+    callbackForm.addEventListener("submit", handleCallbackSubmit);
   }
 
   initRobotCheck();
