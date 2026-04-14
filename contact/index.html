@@ -425,6 +425,8 @@
                       <i class="far fa-comment-alt mil-a-2"></i>
                     </div>
                   </div>
+
+
                   <div class="col-lg-12 mil-aic">
                     <p class="mil-fs-14 mil-m-2">
                       By clicking the send button, you agree to the rules for
@@ -731,6 +733,31 @@
     </div>
     </div>
   </footer>
+  <!-- Security Modal -->
+  <div class="mil-modal-overlay" id="captcha-modal">
+    <div class="mil-modal-content mil-bg-m-1 mil-br-md">
+      <div class="mil-modal-header mil-mb-20 mil-aic mil-jcb">
+        <h4 class="mil-fs-24">Security Check</h4>
+        <button type="button" class="mil-modal-close" id="close-modal">&times;</button>
+      </div>
+      <p class="mil-fs-16 mil-mb-30">To protect our service, please verify that you are not a robot before sending your request.</p>
+      
+      <div class="mil-robot-check-frame mil-bg-m-3 mil-br-md mil-aic mil-jcb mil-p-10-20">
+        <div class="mil-robot-check-content mil-aic">
+          <div class="mil-robot-checkbox" id="robot-checkbox">
+            <div class="mil-robot-spinner"></div>
+            <i class="fas fa-check mil-check-icon"></i>
+          </div>
+          <span class="mil-fs-16 mil-ml-15 mil-fw-600">I am not a robot</span>
+        </div>
+        <div class="mil-robot-badge mil-column mil-aic">
+          <i class="fas fa-shield-check mil-fs-24 mil-a-1 mil-mb-5" style="opacity: 0.6;"></i>
+          <span style="font-size: 8px; opacity: 0.5; text-transform: uppercase; letter-spacing: 1px;">Secure</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="toast" class="toast"></div>
 
   <!-- swup js -->
