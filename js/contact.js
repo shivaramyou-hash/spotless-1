@@ -29,14 +29,12 @@ function autoFillFromQueryParams() {
     'message': document.getElementById('message')
   };
 
-  // Fill text fields
   for (const [key, element] of Object.entries(fields)) {
     if (element && urlParams.has(key)) {
       element.value = urlParams.get(key);
     }
   }
 
-  // Fill service selection
   if (urlParams.has('select')) {
     const serviceValue = urlParams.get('select');
     const radio = document.querySelector(`input[name="select"][value="${serviceValue}"]`);
@@ -49,7 +47,6 @@ function autoFillFromQueryParams() {
     }
   }
 
-  // IMPORTANT: Clean the URL immediately after filling to prevent state issues 
   if (window.location.search) {
       window.history.replaceState({}, document.title, window.location.pathname);
       console.log("URL parameters cleared ✅");
@@ -60,6 +57,7 @@ function autoFillFromQueryParams() {
 // ROBOT CHECK LOGIC (MODAL VERSION)
 // ================================
 let isVerified = false;
+let isSubmitting = false; // Flag to prevent double submission
 
 function initRobotCheck() {
   const robotCheckbox = document.getElementById("robot-checkbox");
@@ -68,15 +66,19 @@ function initRobotCheck() {
 
   if (!robotCheckbox || !modal) return;
 
-  robotCheckbox.addEventListener("click", async (e) => {
-    e.preventDefault(); // Extra safeguard
+  // Clear existing listeners to prevent duplicates
+  const newCheckbox = robotCheckbox.cloneNode(true);
+  robotCheckbox.parentNode.replaceChild(newCheckbox, robotCheckbox);
+
+  newCheckbox.addEventListener("click", async (e) => {
+    e.preventDefault();
     if (isVerified) return;
 
-    robotCheckbox.classList.add("loading");
+    newCheckbox.classList.add("loading");
     await new Promise(resolve => setTimeout(resolve, 1500));
 
-    robotCheckbox.classList.remove("loading");
-    robotCheckbox.classList.add("verified");
+    newCheckbox.classList.remove("loading");
+    newCheckbox.classList.add("verified");
     isVerified = true;
     
     setTimeout(() => {
@@ -88,7 +90,12 @@ function initRobotCheck() {
     }, 800);
   });
 
-  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (closeBtn) {
+      const newCloseBtn = closeBtn.cloneNode(true);
+      closeBtn.parentNode.replaceChild(newCloseBtn, closeBtn);
+      newCloseBtn.addEventListener("click", closeModal);
+  }
+  
   modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 }
 
@@ -108,38 +115,42 @@ function resetRobotCheck() {
     robotCheckbox.classList.remove("verified", "loading");
   }
   isVerified = false;
+  isSubmitting = false;
 }
 
 // ================================
 // SUBMIT HANDLER
 // ================================
 async function handleSubmit(e) {
-  // CRITICAL: Prevent ANY default browser action immediately
   if (e) {
     e.preventDefault();
     e.stopPropagation();
   }
 
+  if (isSubmitting) return false;
+
   const name = document.getElementById("user-name").value.trim();
   const email = document.getElementById("user-email").value.trim();
-  const phone = document.getElementById("user-phone").value.trim();
   const message = document.getElementById("message").value.trim();
 
   if (!name || !email || !message) {
     showToast("Please fill all required fields", "error");
-    return false; // Stop form
+    return false;
   }
 
   if (!isVerified) {
     openModal();
-    return false; // Stop form
+    return false;
   }
 
   performActualSubmission(e.target);
-  return false; // Final safeguard
+  return false;
 }
 
 async function performActualSubmission(formElement) {
+  if (isSubmitting) return;
+  isSubmitting = true;
+
   const name = document.getElementById("user-name").value.trim();
   const email = document.getElementById("user-email").value.trim();
   const phone = document.getElementById("user-phone").value.trim();
@@ -148,9 +159,13 @@ async function performActualSubmission(formElement) {
   const services = serviceInput ? serviceInput.value : null;
 
   const submitBtn = formElement.querySelector("button[type='submit']");
-  if (submitBtn) submitBtn.classList.add("loading");
+  if (submitBtn) {
+      submitBtn.classList.add("loading");
+      submitBtn.disabled = true;
+  }
 
   try {
+
     await fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive", {
       method: "POST",
       headers: {
@@ -159,31 +174,41 @@ async function performActualSubmission(formElement) {
       },
       body: JSON.stringify({}),
     });
-  } catch (err) {}
 
-  const { error } = await supabaseClient.from("contact_form").insert([
-    { name, email, phone, services, message },
-  ]);
+    const { error } = await supabaseClient.from("contact_form").insert([
+      { name, email, phone, services, message },
+    ]);
 
-  if (!error) {
-    showToast("✅ Request submitted successfully!", "success");
-    fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/send-contact-notification", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-      },
-      body: JSON.stringify({ type: "contact", name, email, phone, services, message }),
-    });
-    formElement.reset();
-    resetRobotCheck();
-    const selectedValueSpan = document.querySelector('.mil-selected-value');
-    if (selectedValueSpan) selectedValueSpan.textContent = "Services";
-  } else {
-    showToast("Failed to submit request", "error");
+    if (!error) {
+      showToast("✅ Request submitted successfully!", "success");
+      
+      // Notify edge function
+      fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/send-contact-notification", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({ type: "contact", name, email, phone, services, message }),
+      });
+
+      formElement.reset();
+      resetRobotCheck();
+      const selectedValueSpan = document.querySelector('.mil-selected-value');
+      if (selectedValueSpan) selectedValueSpan.textContent = "Services";
+    } else {
+      showToast("Failed to submit request", "error");
+      isSubmitting = false;
+    }
+  } catch (err) {
+    console.error(err);
+    isSubmitting = false;
   }
 
-  if (submitBtn) submitBtn.classList.remove("loading");
+  if (submitBtn) {
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+  }
 }
 
 // ================================
@@ -201,21 +226,11 @@ async function handleCallbackSubmit(e) {
   }
 
   const submitBtn = e.target.querySelector("button[type='submit']");
-  if (submitBtn) submitBtn.classList.add("loading");
- // Wake up DB
-  try {
-    await fetch("https://hufqhcirhlbyslmexvgw.supabase.co/functions/v1/keep-alive", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-      },
-      body: JSON.stringify({}),
-    });
-  } catch (err) {
-      console.warn("Keep-alive trigger failed", err);
+  if (submitBtn) {
+      submitBtn.classList.add("loading");
+      submitBtn.disabled = true;
   }
-  
+
   const { error } = await supabaseClient.from("call_back").insert([{ name, phone }]);
 
   if (!error) {
@@ -231,7 +246,10 @@ async function handleCallbackSubmit(e) {
     e.target.reset();
   }
 
-  if (submitBtn) submitBtn.classList.remove("loading");
+  if (submitBtn) {
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+  }
 }
 
 // ================================
@@ -242,31 +260,42 @@ function init() {
 
   const contactForm = document.getElementById("contact-form-element");
   if (contactForm) {
-    contactForm.addEventListener("submit", handleSubmit);
-    // Extra safeguard: inline handler override
-    contactForm.onsubmit = (e) => {
-        handleSubmit(e);
-        return false; 
-    };
+    // Remove old listeners by cloning (if re-initing via swup)
+    const newForm = contactForm.cloneNode(true);
+    contactForm.parentNode.replaceChild(newForm, contactForm);
+    newForm.addEventListener("submit", handleSubmit);
   }
 
   const callbackForm = document.getElementById("callbackForm");
   if (callbackForm) {
-    callbackForm.addEventListener("submit", handleCallbackSubmit);
-    callbackForm.onsubmit = (e) => {
-        handleCallbackSubmit(e);
-        return false;
-    };
+    const newCBForm = callbackForm.cloneNode(true);
+    callbackForm.parentNode.replaceChild(newCBForm, callbackForm);
+    newCBForm.addEventListener("submit", handleCallbackSubmit);
   }
 
   initRobotCheck();
   autoFillFromQueryParams();
 }
 
-// Handle both normal load and Swup transitions
 document.addEventListener("DOMContentLoaded", init);
 if (window.swup) {
     document.addEventListener("swup:contentReplaced", init);
 }
-// Final fallback for swup versions
 document.addEventListener("swup:pageView", init);
+
+// ================================
+// TOAST FUNCTION
+// ================================
+function showToast(message, type = "success") {
+  let toast = document.getElementById("toast");
+  if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "toast";
+      document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.className = `toast ${type} show`;
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}
